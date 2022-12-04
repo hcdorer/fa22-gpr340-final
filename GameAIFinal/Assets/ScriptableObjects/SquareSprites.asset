@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab11caf97d0f2c940b20187d12ca34a8, type: 3}
+  m_Name: SquareSprites
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: 65495a55325e73c4f90cae98bb6f82ee, type: 3}
+  - {fileID: 21300000, guid: 06f360e205adeee4a937928eaf41346d, type: 3}
+  - {fileID: 21300000, guid: ca0ef3217db2a744982f75125c125b9d, type: 3}
+  - {fileID: 21300000, guid: 7f767ed5c172f3848a0de403fb148f8f, type: 3}
+  - {fileID: 21300000, guid: 286cc6697d5fc3440b9211d864715f05, type: 3}
+  - {fileID: 21300000, guid: 8eb619191ba048746962afc95320ec47, type: 3}
+  - {fileID: 21300000, guid: fa9f5b4293e3e5442ad9e294fcec091a, type: 3}
+  - {fileID: 21300000, guid: b71a152ecc37c0a4fb8cafc1e5d68f33, type: 3}
+  - {fileID: 21300000, guid: 38a457d4ae2f8524ba45fd86ddef7d1a, type: 3}
+  - {fileID: 21300000, guid: e30e7196ddc562a45ab2a725b6fbd030, type: 3}
+  - {fileID: 21300000, guid: 7ea29ff0195554846a2d75b1b9f134fb, type: 3}
+  - {fileID: 21300000, guid: 799e2e7ea239e3f44ae6077aaeb5d84c, type: 3}
+  - {fileID: 21300000, guid: 7f07aefe1c45fb14290663b13aaa6c54, type: 3}
+  - {fileID: 21300000, guid: e4690f6249102024ea07203327fc7c01, type: 3}
+  - {fileID: 21300000, guid: db508dff1608350468f7bc5ce796a8f1, type: 3}
+  - {fileID: 21300000, guid: 37005ccb03ae54a4b8926ceb794fa216, type: 3}
+  spriteNames:
+  - Square
+  - SquareN
+  - SquareE
+  - SquareS
+  - SquareW
+  - SquareNE
+  - SquareNS
+  - SquareNW
+  - SquareES
+  - SquareEW
+  - SquareSW
+  - SquareNES
+  - SquareNEW
+  - SquareNSW
+  - SquareESW
+  - SquareNESW
