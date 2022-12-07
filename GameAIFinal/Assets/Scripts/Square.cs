@@ -14,6 +14,7 @@ public class Square : GridAligned {
     private void OnValidate() {
         setSprite();
         setNeighborWalls();
+        snapToGrid();
     }
 
     private void setSprite() {
