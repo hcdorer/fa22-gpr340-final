@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8091558749369273196}
   - component: {fileID: 8091558749369273199}
   - component: {fileID: 8091558749369273197}
+  - component: {fileID: 6678617339296266316}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Square
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71,10 +72,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -174797555
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 65495a55325e73c4f90cae98bb6f82ee, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37005ccb03ae54a4b8926ceb794fa216, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,8 +98,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2139c8aa24aec234cbf6fcfb7488ee1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelGrid: {fileID: 0}
+  gridPosition: {x: 0, y: 0}
   sprites: {fileID: 11400000, guid: a3b7f0b59fef140449fa3254b10f88fc, type: 2}
-  north: 0
-  east: 0
-  south: 0
-  west: 0
+  northWall: 1
+  eastWall: 1
+  southWall: 1
+  westWall: 1
+--- !u!61 &6678617339296266316
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8091558749369273198}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.64, y: 0.64}
+  m_EdgeRadius: 0
