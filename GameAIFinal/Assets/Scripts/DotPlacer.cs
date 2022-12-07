@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DotPlacer : MonoBehaviour {
     private GameObject dotHolder;
     [SerializeField] private Dot dotPrefab;
+    [SerializeField] private PowerDot powerDotPrefab;
+    [SerializeField] private Vector2Int[] powerDotGridPositions;
 
     [ContextMenu("Place Dots")]
     void placeDots() {
@@ -30,7 +33,16 @@ public class DotPlacer : MonoBehaviour {
             for(int j = gridBuilder.StartPosition.x; j < gridBuilder.StartPosition.x + gridBuilder.Columns; j++) {
                 Square current = Square.getSquareAt(GetComponent<Grid>().CellToWorld(new Vector3Int(j, i, 0)));
                 if(!current.NorthWall || !current.EastWall || !current.SouthWall || !current.WestWall) {
-                    Dot dot = Instantiate(dotPrefab, dotHolder.transform);
+                    // Dot dot = Instantiate(dotPrefab, dotHolder.transform);
+                    Dot dot;
+                    Vector2Int newPos = new Vector2Int(j, i);
+
+                    if(powerDotGridPositions.Contains(newPos)) {
+                        dot = Instantiate(powerDotPrefab, dotHolder.transform);
+                    } else {
+                        dot = Instantiate(dotPrefab, dotHolder.transform);
+                    }
+
                     dot.name = "Dot_" + j + "_" + i;
                     dot.LevelGrid = GetComponent<Grid>();
                     dot.GridPosition = new Vector2Int(j, i);
