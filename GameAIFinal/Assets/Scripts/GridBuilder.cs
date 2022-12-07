@@ -5,32 +5,36 @@ using UnityEngine;
 public class GridBuilder : MonoBehaviour {
     private GameObject gridHolder;
     [SerializeField] private Square squarePrefab;
-    [SerializeField] Vector2Int startPosition;
+    [SerializeField] private Vector2Int startPosition;
+    public Vector2Int StartPosition { get => startPosition; }
     [SerializeField] private int rows;
+    public int Rows { get => rows; }
     [SerializeField] private int columns;
+    public int Columns { get => columns; }
 
     [ContextMenu("Create Grid")]
-    void setupGrid() {
-        if(GameObject.Find("GridHolder")) {
-            DestroyImmediate(GameObject.Find("GridHolder"));
+    void createGrid() {
+        if(gridHolder != null) {
+            DestroyImmediate(gridHolder);
         }
 
-        initGridHolder();
-        buildGrid();
+        Grid levelGrid = GetComponent<Grid>();
+        initGridHolder(levelGrid);
+        buildGrid(levelGrid);
     }
 
-    void initGridHolder() {
+    void initGridHolder(Grid levelGrid) {
         gridHolder = new GameObject();
         gridHolder.name = "GridHolder";
-        gridHolder.transform.position = GetComponent<Grid>().CellToWorld(new Vector3Int(startPosition.x, startPosition.y, 0));
+        gridHolder.transform.position = levelGrid.CellToWorld(new Vector3Int(startPosition.x, startPosition.y, 0));
     }
 
-    void buildGrid() {
+    void buildGrid(Grid levelGrid) {
         for(int i = startPosition.y; i < startPosition.y + rows; i++) {
             for(int j = startPosition.x; j < startPosition.x + columns; j++) {
                 Square square = Instantiate(squarePrefab, gridHolder.transform);
                 square.name = "Square_" + j + "_" + i;
-                square.LevelGrid = GetComponent<Grid>();
+                square.LevelGrid = levelGrid;
                 square.GridPosition = new Vector2Int(j, i);
             }
         }

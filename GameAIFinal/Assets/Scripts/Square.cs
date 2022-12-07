@@ -6,6 +6,10 @@ public class Square : GridAligned {
     [SerializeField] SquareSprites sprites;
 
     [SerializeField] bool northWall = true, eastWall = true, southWall = true, westWall = true;
+    public bool NorthWall { get => northWall; }
+    public bool EastWall { get => eastWall; }
+    public bool SouthWall { get => southWall; }
+    public bool WestWall { get => westWall; }
     private Square northNeighbor { get => getSquareAt(levelGrid.CellToWorld(new Vector3Int(gridPosition.x, gridPosition.y + 1, 0))); }
     private Square eastNeighbor { get => getSquareAt(levelGrid.CellToWorld(new Vector3Int(gridPosition.x + 1, gridPosition.y, 0))); }
     private Square southNeighbor { get => getSquareAt(levelGrid.CellToWorld(new Vector3Int(gridPosition.x, gridPosition.y - 1, 0))); }
@@ -44,7 +48,7 @@ public class Square : GridAligned {
         }
     }
 
-    private static Square getSquareAt(Vector3 position) {
+    public static Square getSquareAt(Vector3 position) {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.1f);
         foreach(Collider2D c in colliders) {
             if(c.gameObject.tag == "Square") {
