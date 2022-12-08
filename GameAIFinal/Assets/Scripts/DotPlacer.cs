@@ -39,11 +39,12 @@ public class DotPlacer : MonoBehaviour {
 
                     if(powerDotGridPositions.Contains(newPos)) {
                         dot = Instantiate(powerDotPrefab, dotHolder.transform);
+                        dot.name = "PowerDot_" + j + "_" + i;
                     } else {
                         dot = Instantiate(dotPrefab, dotHolder.transform);
+                        dot.name = "Dot_" + j + "_" + i;
                     }
-
-                    dot.name = "Dot_" + j + "_" + i;
+                    
                     dot.LevelGrid = GetComponent<Grid>();
                     dot.GridPosition = new Vector2Int(j, i);
                 }
