@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterMovement : GridAligned 
 {
     private Vector2Int direction = -Vector2Int.right;
-    private Vector2Int Direction { set => direction = value; }
+    public Vector2Int Direction { set => direction = value; }
     private Vector2Int targetGridPosition;
     [SerializeField] private float moveSpeed;
 
@@ -16,7 +16,10 @@ public class CharacterMovement : GridAligned
     private void Update() {
         if(lerp()) {
             gridPosition = targetGridPosition;
-            targetGridPosition += direction;
+            Vector2Int nextTarget = targetGridPosition + direction;
+            if(canMoveIntoSquare(Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0))))) {
+                targetGridPosition = nextTarget;
+            }
         }
     }
 
@@ -26,6 +29,27 @@ public class CharacterMovement : GridAligned
         if(transform.position == targetPosition) {
             return true;
         }
+        return false;
+    }
+
+    private bool canMoveIntoSquare(Square square) {
+        if(square == null) {
+            return false;
+        }
+
+        if(direction.y > 0) {
+            return !square.SouthWall;
+        }
+        if(direction.x > 0) {
+            return !square.WestWall;
+        }
+        if(direction.y < 0) {
+            return !square.NorthWall;
+        }
+        if(direction.x < 0) {
+            return !square.EastWall;
+        }
+
         return false;
     }
 }
