@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1192361585314945180}
   - component: {fileID: 1192361585314945181}
   - component: {fileID: 1192361585314945182}
-  - component: {fileID: 5719608611969056137}
+  - component: {fileID: 1083629874498044434}
   m_Layer: 0
   m_Name: PowerDot
   m_TagString: Untagged
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 0}
   gridPosition: {x: 0, y: 0}
---- !u!58 &5719608611969056137
+--- !u!58 &1083629874498044434
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -110,9 +110,9 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.32

@@ -21,6 +21,19 @@ public class Square : GridAligned {
         snapToGrid();
     }
 
+    public override bool Equals(object otherObj)
+    {
+        if (otherObj == null || !this.GetType().Equals(otherObj.GetType()))
+        {
+            return false;
+        }
+        else
+        { // we know it's actually a Square
+            Square other = (Square)otherObj;
+            return gridPosition == other.gridPosition && northWall == other.northWall && eastWall == other.eastWall && southWall == other.southWall && westWall == other.westWall;
+        }
+    }
+
     private void setSprite() {
         string spriteName = "Square" + (northWall ? "N" : "") + (eastWall ? "E" : "") + (southWall ? "S" : "") + (westWall ? "W" : "");
         GetComponent<SpriteRenderer>().sprite = sprites.getSpriteByName(spriteName);
@@ -48,6 +61,18 @@ public class Square : GridAligned {
         }
     }
 
+    public Square[] getNeighbors()
+    {
+        Square[] results = new Square[4];
+
+        results[0] = northNeighbor;
+        results[1] = eastNeighbor;
+        results[2] = southNeighbor;
+        results[3] = westNeighbor;
+
+        return results;
+    }
+
     public static Square getSquareAt(Vector3 position) {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.1f);
         foreach(Collider2D c in colliders) {
@@ -57,5 +82,10 @@ public class Square : GridAligned {
         }
 
         return null;
+    }
+
+    public static float getDistanceBetween(Square first, Square second)
+    {
+        return Mathf.Sqrt(Mathf.Pow(second.GridPosition.x - first.GridPosition.x, 2.0f) + Mathf.Pow(second.GridPosition.y - first.GridPosition.y, 2.0f));
     }
 }
