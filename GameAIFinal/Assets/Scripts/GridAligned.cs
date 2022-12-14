@@ -10,6 +10,12 @@ public class GridAligned : MonoBehaviour {
 
     private void OnValidate() {
         snapToGrid();
+
+        foreach(GridAligned g in GetComponents<GridAligned>()) {
+            if(g != this) {
+                g.gridPosition = gridPosition;
+            }
+        }
     }
 
     private void Start() {

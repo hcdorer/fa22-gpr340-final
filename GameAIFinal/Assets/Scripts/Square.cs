@@ -84,7 +84,7 @@ public class Square : GridAligned {
         return null;
     }
 
-    public static float getDistanceBetween(Square first, Square second)
+    public static float gridDistanceTo(Square first, Square second)
     {
         return Mathf.Sqrt(Mathf.Pow(second.GridPosition.x - first.GridPosition.x, 2.0f) + Mathf.Pow(second.GridPosition.y - first.GridPosition.y, 2.0f));
     }

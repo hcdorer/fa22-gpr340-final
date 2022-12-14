@@ -7,54 +7,46 @@ using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
-public class Path
-{
+public class Path {
     Square origin;
     Square target;
     public Square Target { get { return target; } }
 
-    List<SquareNode> pathList = new List<SquareNode>();
+    List<SquareNode> pathList;
     public List<SquareNode> PathList { get { return pathList; } }
     public int Length { get { return pathList.Count; } }
 
-    public Path(Square origin, Square target)
-    {
+    public Path(Square origin, Square target) {
+        Debug.Log("path ctor is being reached");
+
         this.origin = origin;
         this.target = target;
 
         makePath();
     }
 
-    public void makePath()
-    {
+    public void makePath() {
         List<SquareNode> open = new List<SquareNode>();
         List<SquareNode> closed = new List<SquareNode>();
 
         SquareNode current = new SquareNode(origin, target);
         closed.Add(current);
 
-        while (current.Square != target)
-        {
+        while(current.Square != target) {
             SquareNode[] neighborNodes = current.getNeighborNodes();
             bool[] alreadyExists = new bool[neighborNodes.Length];
 
-            for(int i = 0; i < neighborNodes.Length; i++)
-            {
-                if (neighborNodes[i] != null)
-                {
-                    foreach(SquareNode n in open)
-                    {
-                        if (neighborNodes[i].Equals(n))
-                        {
+            for(int i = 0; i < neighborNodes.Length; i++) {
+                if(neighborNodes[i] != null) {
+                    foreach(SquareNode n in open) {
+                        if(neighborNodes[i].Equals(n)) {
                             neighborNodes[i] = n;
                             alreadyExists[i] = true;
                         }
                     }
 
-                    foreach(SquareNode n in closed)
-                    {
-                        if (neighborNodes[i].Equals(n))
-                        {
+                    foreach(SquareNode n in closed) {
+                        if(neighborNodes[i].Equals(n)) {
                             neighborNodes[i] = n;
                             alreadyExists[i] = true;
                         }
@@ -62,28 +54,26 @@ public class Path
                 }
             }
 
-            for(int i = 0; i < neighborNodes.Length; i++)
-            {
-                if (neighborNodes[i] != null)
-                {
-                    if (SquareNode.getNewGCost(current, neighborNodes[i]) < neighborNodes[i].GCost)
-                    {
-                        neighborNodes[i].Previous = current;
+            foreach(SquareNode neighbor in neighborNodes) {
+                if(neighbor != null) {
+                    if(SquareNode.getNewGCost(current, neighbor) < neighbor.GCost) {
+                        neighbor.Previous = current;
                     }
 
-                    if (canMoveIntoSquare(neighborNodes[i].Square, current.Square))
-                    {
-                        open.Add(current);
+                    if(canMoveIntoSquare(neighbor.Square, current.Square)) {
+                        open.Add(neighbor);
                     }
                 }
+            }
+
+            if(open.Count <= 0) {
+                break;
             }
 
             int lowestFCost = open[0].FCost;
             int lowestIndex = 0;
-            for(int i = 0; i < open.Count; i++)
-            {
-                if (open[i].FCost < lowestFCost)
-                {
+            for(int i = 0; i < open.Count; i++) {
+                if(open[i].FCost < lowestFCost) {
                     lowestFCost = open[i].FCost;
                     lowestIndex = i;
                 }
@@ -94,35 +84,31 @@ public class Path
             open.Remove(current);
         }
 
-        while (current != null)
-        { // LinkedList style
-            pathList.Add(current);
-            current = current.Previous;
+        if(current.Square == target) {
+            pathList = new List<SquareNode>();
+            while(current != null) { // LinkedList style
+                pathList.Add(current);
+                current = current.Previous;
+            }
         }
     }
 
-    private bool canMoveIntoSquare(Square square, Square current)
-    {
-        if(square == null)
-        {
+    private bool canMoveIntoSquare(Square square, Square current) {
+        if(square == null) {
             return false;
         }
 
-        Vector2Int delta = square.GridPosition - current.GridPosition;    
-        if (delta.y > 0)
-        {
+        Vector2Int delta = square.GridPosition - current.GridPosition;
+        if(delta.y > 0) {
             return !square.SouthWall;
         }
-        if (delta.x > 0)
-        {
+        if(delta.x > 0) {
             return !square.WestWall;
         }
-        if (delta.y < 0)
-        {
+        if(delta.y < 0) {
             return !square.NorthWall;
         }
-        if (delta.x < 0)
-        {
+        if(delta.x < 0) {
             return !square.EastWall;
         }
 
