@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SquareNode {
     Square square; // which Square this node represents
-    public Square Square { get { return square; } }
+    public Square Square { get => square; }
     Square target; // which Square we're trying to get to (may not need to store this)
     SquareNode previous; // which SquareNode this SquareNode came from
-    public SquareNode Previous { get { return previous; } set { updatePrevious(value); } }
+    public SquareNode Previous { get => previous; set => updatePrevious(value); }
 
     int fCost;
     public int FCost { get { return fCost; } }

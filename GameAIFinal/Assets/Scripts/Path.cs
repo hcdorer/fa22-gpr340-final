@@ -8,24 +8,16 @@ using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public class Path {
-    Square origin;
-    Square target;
-    public Square Target { get { return target; } }
-
-    List<SquareNode> pathList;
-    public List<SquareNode> PathList { get { return pathList; } }
-    public int Length { get { return pathList.Count; } }
+    public List<SquareNode> pathList { get; private set; }
+    public int length { get => pathList.Count; }
+    public bool isValid { get => pathList == null; }
 
     public Path(Square origin, Square target) {
-        Debug.Log("path ctor is being reached");
-
-        this.origin = origin;
-        this.target = target;
-
-        makePath();
+        pathList = null;
+        makePath(origin, target);
     }
 
-    public void makePath() {
+    private void makePath(Square origin, Square target) {
         List<SquareNode> open = new List<SquareNode>();
         List<SquareNode> closed = new List<SquareNode>();
 
@@ -60,7 +52,7 @@ public class Path {
                         neighbor.Previous = current;
                     }
 
-                    if(canMoveIntoSquare(neighbor.Square, current.Square)) {
+                    if(canMoveIntoSquare(neighbor.Square, current.Square) && !closed.Contains(neighbor)) {
                         open.Add(neighbor);
                     }
                 }
@@ -87,7 +79,7 @@ public class Path {
         if(current.Square == target) {
             pathList = new List<SquareNode>();
             while(current != null) { // LinkedList style
-                pathList.Add(current);
+                pathList.Insert(0, current);
                 current = current.Previous;
             }
         }
