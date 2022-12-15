@@ -30,5 +30,11 @@ public class GridAligned : MonoBehaviour {
     private void setGridPosition(Vector2Int value) {
         gridPosition = value;
         snapToGrid();
+
+        foreach(GridAligned g in GetComponents<GridAligned>()) {
+            if(g != this) {
+                g.gridPosition = gridPosition;
+            }
+        }
     }
 }

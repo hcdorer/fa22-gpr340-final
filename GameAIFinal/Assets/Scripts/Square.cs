@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -87,5 +88,9 @@ public class Square : GridAligned {
     public static float gridDistanceTo(Square first, Square second)
     {
         return Mathf.Sqrt(Mathf.Pow(second.GridPosition.x - first.GridPosition.x, 2.0f) + Mathf.Pow(second.GridPosition.y - first.GridPosition.y, 2.0f));
+    }
+
+    public static Vector2Int getRelativeDirection() {
+        throw new NotImplementedException();
     }
 }

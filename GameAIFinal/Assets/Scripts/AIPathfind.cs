@@ -9,12 +9,24 @@ public class AIPathfind : GridAligned
     public Square square { get { return Square.getSquareAt(transform.position); } }
 
     [SerializeField] private Vector2Int targetGridPosition;
-    // [SerializeField] Square target;
+
+    CharacterMovement movement;
 
     private void Start() {
-        Debug.Log("pathfind start is being reached");
         path = new Path(square, Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(targetGridPosition.x, targetGridPosition.y, 0))));
-        // path = new Path(square, target);
-        Debug.Log("pathfinding is finished");
+        pathIndex = 0;
+
+        movement = GetComponent<CharacterMovement>();
+        movement.Direction = path.pathList[pathIndex + 1].Square.GridPosition - path.pathList[pathIndex].Square.GridPosition;
+    }
+
+    public void onTargetReached() {
+        if(Square.getSquareAt(transform.position) != path.pathList[pathIndex + 1].Square) {
+            return;
+        }
+
+        pathIndex++;
+        Vector2Int delta = path.pathList[pathIndex + 1].Square.GridPosition - path.pathList[pathIndex].Square.GridPosition;
+        movement.Direction = delta;
     }
 }
