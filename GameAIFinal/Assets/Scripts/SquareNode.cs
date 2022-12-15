@@ -10,10 +10,11 @@ public class SquareNode {
     public SquareNode Previous { get => previous; set => updatePrevious(value); }
 
     int fCost;
-    public int FCost { get { return fCost; } }
+    public int FCost { get => fCost; }
     int gCost;
-    public int GCost { get { return gCost; } }
+    public int GCost { get => gCost; }
     int hCost;
+    public int HCost { get => hCost; }
 
     public SquareNode(Square square, Square target) { // this constructor is only used for the origin
         this.square = square;

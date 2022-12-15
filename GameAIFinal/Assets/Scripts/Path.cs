@@ -1,5 +1,5 @@
 /* This game uses the A\* pathfinding algorithm, which is implemented based on pseudocode found in a YouTube video tutorial by Sebastian Lague.
- * The citation for the video can be found in the readme file at the root directory of this project.
+ * https://www.youtube.com/watch?v=-L-WgKMFuhE
  */
 
 using System.Collections;
@@ -67,6 +67,8 @@ public class Path {
             for(int i = 0; i < open.Count; i++) {
                 if(open[i].FCost < lowestFCost) {
                     lowestFCost = open[i].FCost;
+                    lowestIndex = i;
+                } else if(open[i].FCost == lowestFCost && open[i].HCost < open[lowestIndex].HCost) {
                     lowestIndex = i;
                 }
             }
