@@ -7,7 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GhostBrain : MonoBehaviour {
+public abstract class GhostBrain : MonoBehaviour {
     protected enum Behavior {
         CHASE,
         SCATTER,
@@ -26,10 +26,10 @@ public class GhostBrain : MonoBehaviour {
     [SerializeField] private Square scatterOpposite;
     bool targetOpposite = false;
 
-    private Square lastKnownCrossroads;
+    protected Square lastKnownCrossroads;
     private Square playerSquare { get => FindObjectOfType<PacManInput>().GetComponent<CharacterMovement>().square; }
 
-    private AIPathfind pathfind;
+    protected AIPathfind pathfind;
 
     private void Start() {
         pathfind = GetComponent<AIPathfind>();
@@ -60,7 +60,7 @@ public class GhostBrain : MonoBehaviour {
             behavior = Behavior.CHASE;
             phaseTimer = CHASE_TIMER_START;
             if(lastKnownCrossroads != null) {
-                pathfind.setPath(lastKnownCrossroads);
+                pathfind.setPath(getChaseTarget());
             } else {
                 behavior = Behavior.SCATTER;
             }
@@ -72,7 +72,7 @@ public class GhostBrain : MonoBehaviour {
 
         lastKnownCrossroads = crossroadsSender.square;
         if(behavior == Behavior.CHASE) {
-            pathfind.setPath(lastKnownCrossroads);
+            pathfind.setPath(getChaseTarget());
         }
     }
 
@@ -87,4 +87,6 @@ public class GhostBrain : MonoBehaviour {
                 break;
         }
     }
+
+    protected abstract Square getChaseTarget();
 }

@@ -11,6 +11,7 @@ public class Square : GridAligned {
     public bool EastWall { get => eastWall; }
     public bool SouthWall { get => southWall; }
     public bool WestWall { get => westWall; }
+    public bool walledOff { get => !(northWall && eastWall && southWall && westWall); }
     private Square northNeighbor { get => getSquareAt(levelGrid.CellToWorld(new Vector3Int(gridPosition.x, gridPosition.y + 1, 0))); }
     private Square eastNeighbor { get => getSquareAt(levelGrid.CellToWorld(new Vector3Int(gridPosition.x + 1, gridPosition.y, 0))); }
     private Square southNeighbor { get => getSquareAt(levelGrid.CellToWorld(new Vector3Int(gridPosition.x, gridPosition.y - 1, 0))); }
@@ -82,9 +83,5 @@ public class Square : GridAligned {
 
     public static float gridDistanceTo(Square first, Square second) {
         return Mathf.Sqrt(Mathf.Pow(second.GridPosition.x - first.GridPosition.x, 2.0f) + Mathf.Pow(second.GridPosition.y - first.GridPosition.y, 2.0f));
-    }
-
-    public static Vector2Int getRelativeDirection() {
-        throw new NotImplementedException();
     }
 }
