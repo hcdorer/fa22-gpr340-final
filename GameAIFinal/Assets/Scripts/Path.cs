@@ -10,6 +10,7 @@ public class Path {
     public List<SquareNode> pathList { get; private set; }
     public int length { get => pathList.Count; }
     public bool isValid { get => pathList == null; }
+    public Square last { get => pathList[length - 1].Square; }
 
     public Path(Square origin, Square target) {
         pathList = null;

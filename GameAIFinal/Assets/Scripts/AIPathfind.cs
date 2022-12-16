@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AIPathfind : GridAligned
 {
@@ -12,21 +13,44 @@ public class AIPathfind : GridAligned
 
     CharacterMovement movement;
 
-    private void Start() {
-        path = new Path(square, Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(targetGridPosition.x, targetGridPosition.y, 0))));
-        pathIndex = 0;
+    public UnityEvent onTargetReached;
 
+    private void Start() {
         movement = GetComponent<CharacterMovement>();
-        movement.Direction = path.pathList[pathIndex + 1].Square.GridPosition - path.pathList[pathIndex].Square.GridPosition;
+        // movement.Direction = path.pathList[pathIndex + 1].Square.GridPosition - path.pathList[pathIndex].Square.GridPosition;
     }
 
-    public void onTargetReached() {
-        if(Square.getSquareAt(transform.position) != path.pathList[pathIndex + 1].Square) {
-            return;
+    public void onNextSquareReached() {
+        Square nextSquare;
+        if(pathIndex <= path.length - 2) {
+            nextSquare = path.pathList[pathIndex + 1].Square;
+            if(square != nextSquare) {
+                return;
+            }
+        }
+
+        if(pathIndex == path.length - 1) {
+            onTargetReached.Invoke();
         }
 
         pathIndex++;
-        Vector2Int delta = path.pathList[pathIndex + 1].Square.GridPosition - path.pathList[pathIndex].Square.GridPosition;
-        movement.Direction = delta;
+        setDirection();
+    }
+
+    private void setDirection() {
+        if(pathIndex <= path.length - 2) {
+            Square nextSquare = path.pathList[pathIndex + 1].Square;
+            Vector2Int delta = nextSquare.GridPosition - square.GridPosition;
+            if(movement != null) {
+                movement.Direction = delta;
+            }
+        }
+    }
+
+    public void setPath(Square square) {
+        Debug.Log("Pathfinding to " + square.name);
+        path = new Path(this.square, square);
+        pathIndex = 0;
+        setDirection();
     }
 }

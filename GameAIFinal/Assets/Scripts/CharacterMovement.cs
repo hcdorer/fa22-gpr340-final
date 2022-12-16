@@ -6,23 +6,27 @@ using UnityEngine.Events;
 public class CharacterMovement : GridAligned {
     private Vector2Int direction = Vector2Int.right;
     private Vector2Int nextDirection = Vector2Int.right;
-    public Vector2Int Direction { set => nextDirection = value; }
+    public Vector2Int Direction { set => direction = value; }
     private Vector2Int targetGridPosition;
     [SerializeField] private float moveSpeed;
+
+    public Square square { get => Square.getSquareAt(transform.position); }
 
     public UnityEvent onTargetReached;
 
     private void Start() {
         targetGridPosition = gridPosition + direction;
+        setNextTarget();
     }
 
     private void Update() {
         if(lerp()) {
             gridPosition = targetGridPosition;
-            direction = nextDirection;
             setNextTarget();
 
             onTargetReached.Invoke();
+        } else {
+            setNextTarget();
         }
     }
 
@@ -35,9 +39,7 @@ public class CharacterMovement : GridAligned {
 
     private bool lerp() {
         Vector3 targetPosition = levelGrid.CellToWorld(new Vector3Int(targetGridPosition.x, targetGridPosition.y, 0));
-        if(transform.position == targetPosition) {
-            return false;
-        }
+
         if(!canMoveIntoSquare(Square.getSquareAt(targetPosition))) {
             return false;
         }

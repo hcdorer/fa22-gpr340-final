@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GridAligned : MonoBehaviour {
@@ -10,12 +11,7 @@ public class GridAligned : MonoBehaviour {
 
     private void OnValidate() {
         snapToGrid();
-
-        foreach(GridAligned g in GetComponents<GridAligned>()) {
-            if(g != this) {
-                g.gridPosition = gridPosition;
-            }
-        }
+        setOtherGridPositions();
     }
 
     private void Start() {
@@ -31,10 +27,12 @@ public class GridAligned : MonoBehaviour {
         gridPosition = value;
         snapToGrid();
 
-        foreach(GridAligned g in GetComponents<GridAligned>()) {
-            if(g != this) {
-                g.gridPosition = gridPosition;
-            }
+        setOtherGridPositions();
+    }
+
+    private void setOtherGridPositions() {
+        foreach(var g in GetComponents<GridAligned>().Where(g => g != this)) {
+            g.gridPosition = gridPosition;
         }
     }
 }
