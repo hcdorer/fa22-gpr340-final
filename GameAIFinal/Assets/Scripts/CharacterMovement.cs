@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class CharacterMovement : GridAligned {
     private Vector2Int direction = Vector2Int.right;
-    private Vector2Int nextDirection = Vector2Int.right;
     public Vector2Int Direction { set => direction = value; }
     private Vector2Int targetGridPosition;
     [SerializeField] private float moveSpeed;
@@ -13,6 +12,7 @@ public class CharacterMovement : GridAligned {
     public Square square { get => Square.getSquareAt(transform.position); }
 
     public UnityEvent onTargetReached;
+    public UnityEvent onLerpFail;
 
     private void Start() {
         targetGridPosition = gridPosition + direction;
@@ -41,6 +41,7 @@ public class CharacterMovement : GridAligned {
         Vector3 targetPosition = levelGrid.CellToWorld(new Vector3Int(targetGridPosition.x, targetGridPosition.y, 0));
 
         if(!canMoveIntoSquare(Square.getSquareAt(targetPosition))) {
+            onLerpFail.Invoke();
             return false;
         }
 
@@ -71,5 +72,19 @@ public class CharacterMovement : GridAligned {
         }
 
         return false;
+    }
+
+    public void setRandomDirection() {
+        List<Square> possibleMoves = new List<Square>();
+        foreach(Square square in square.getNeighbors()) {
+            if(canMoveIntoSquare(square)) {
+                possibleMoves.Add(square);
+            }
+        }
+
+        int roll = Random.Range(0, possibleMoves.Count - 1);
+        Square newTarget = possibleMoves[roll];
+        Vector2Int delta = newTarget.GridPosition - square.GridPosition;
+        direction = delta;
     }
 }

@@ -22,14 +22,10 @@ public class Square : GridAligned {
         snapToGrid();
     }
 
-    public override bool Equals(object otherObj)
-    {
-        if (otherObj == null || !this.GetType().Equals(otherObj.GetType()))
-        {
+    public override bool Equals(object otherObj) {
+        if(otherObj == null || !this.GetType().Equals(otherObj.GetType())) {
             return false;
-        }
-        else
-        { // we know it's actually a Square
+        } else { // we know it's actually a Square
             Square other = (Square)otherObj;
             return gridPosition == other.gridPosition && northWall == other.northWall && eastWall == other.eastWall && southWall == other.southWall && westWall == other.westWall;
         }
@@ -62,8 +58,7 @@ public class Square : GridAligned {
         }
     }
 
-    public Square[] getNeighbors()
-    {
+    public Square[] getNeighbors() {
         Square[] results = new Square[4];
 
         results[0] = northNeighbor;
@@ -85,8 +80,7 @@ public class Square : GridAligned {
         return null;
     }
 
-    public static float gridDistanceTo(Square first, Square second)
-    {
+    public static float gridDistanceTo(Square first, Square second) {
         return Mathf.Sqrt(Mathf.Pow(second.GridPosition.x - first.GridPosition.x, 2.0f) + Mathf.Pow(second.GridPosition.y - first.GridPosition.y, 2.0f));
     }
 

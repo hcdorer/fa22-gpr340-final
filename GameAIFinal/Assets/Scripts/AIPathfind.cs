@@ -12,29 +12,39 @@ public class AIPathfind : GridAligned
     [SerializeField] private Vector2Int targetGridPosition;
 
     CharacterMovement movement;
+    bool recovering = false;
 
     public UnityEvent onTargetReached;
 
     private void Start() {
         movement = GetComponent<CharacterMovement>();
-        // movement.Direction = path.pathList[pathIndex + 1].Square.GridPosition - path.pathList[pathIndex].Square.GridPosition;
     }
 
     public void onNextSquareReached() {
-        Square nextSquare;
-        if(pathIndex <= path.length - 2) {
-            nextSquare = path.pathList[pathIndex + 1].Square;
-            if(square != nextSquare) {
-                return;
+        if(recovering) {
+            setPath(path.last);
+        } else {
+            Square nextSquare;
+            if(pathIndex <= path.length - 2) {
+                nextSquare = path.pathList[pathIndex + 1].Square;
+                if(square != nextSquare) {
+                    return;
+                }
             }
-        }
 
-        if(pathIndex == path.length - 1) {
-            onTargetReached.Invoke();
-        }
+            if(pathIndex == path.length - 1) {
+                onTargetReached.Invoke();
+            }
 
-        pathIndex++;
-        setDirection();
+            pathIndex++;
+            setDirection();
+        }
+    }
+
+    public void onLerpFail() {
+        Debug.Log("this code is being reached");
+        recovering = true;
+        movement.setRandomDirection();
     }
 
     private void setDirection() {
@@ -48,7 +58,7 @@ public class AIPathfind : GridAligned
     }
 
     public void setPath(Square square) {
-        Debug.Log("Pathfinding to " + square.name);
+        // Debug.Log("Pathfinding to " + square.name);
         path = new Path(this.square, square);
         pathIndex = 0;
         setDirection();
