@@ -4,8 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class PowerDot : Dot {
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
+    private void OnTriggerEnter2D(Collider2D collision) {
         deleteDot(collision);
     }
 }

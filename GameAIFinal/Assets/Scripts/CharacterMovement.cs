@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CharacterMovement : GridAligned 
-{
-    private Vector2Int direction = -Vector2Int.right;
-    public Vector2Int Direction { set => setDirection(value); }
+public class CharacterMovement : GridAligned {
+    private Vector2Int direction = Vector2Int.right;
+    private Vector2Int nextDirection = Vector2Int.right;
+    public Vector2Int Direction { set => nextDirection = value; }
     private Vector2Int targetGridPosition;
     [SerializeField] private float moveSpeed;
 
@@ -19,6 +19,7 @@ public class CharacterMovement : GridAligned
     private void Update() {
         if(lerp()) {
             gridPosition = targetGridPosition;
+            direction = nextDirection;
             setNextTarget();
 
             onTargetReached.Invoke();
@@ -68,10 +69,5 @@ public class CharacterMovement : GridAligned
         }
 
         return false;
-    }
-
-    private void setDirection(Vector2Int value) {
-        direction = value;
-        setNextTarget();
     }
 }

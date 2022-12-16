@@ -1,10 +1,9 @@
-/* This game uses the A\* pathfinding algorithm, which is implemented based on pseudocode found in a YouTube video tutorial by Sebastian Lague.
+/* This game uses the A* pathfinding algorithm, which is implemented based on pseudocode found in a YouTube video tutorial by Sebastian Lague.
  * https://www.youtube.com/watch?v=-L-WgKMFuhE
  */
 
 using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public class Path {

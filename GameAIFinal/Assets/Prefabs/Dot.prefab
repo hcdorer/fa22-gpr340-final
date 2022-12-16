@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7955083057796541776}
   - component: {fileID: 7955083057796541777}
-  - component: {fileID: 7955083057796541806}
   - component: {fileID: 6587081110399232700}
+  - component: {fileID: 7955083057796541806}
   m_Layer: 0
   m_Name: Dot
   m_TagString: Untagged
@@ -86,20 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7955083057796541806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7955083057796541807}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fb83cfb26a278a45a3c3106d4a650b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelGrid: {fileID: 0}
-  gridPosition: {x: 0, y: 0}
 --- !u!58 &6587081110399232700
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -116,3 +102,17 @@ CircleCollider2D:
   m_Offset: {x: -0.009, y: 0.01}
   serializedVersion: 2
   m_Radius: 0.09
+--- !u!114 &7955083057796541806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7955083057796541807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb83cfb26a278a45a3c3106d4a650b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelGrid: {fileID: 0}
+  gridPosition: {x: 0, y: 0}

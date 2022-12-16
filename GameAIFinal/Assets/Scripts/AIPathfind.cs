@@ -6,7 +6,7 @@ public class AIPathfind : GridAligned
 {
     Path path;
     int pathIndex;
-    public Square square { get { return Square.getSquareAt(transform.position); } }
+    public Square square { get => Square.getSquareAt(transform.position); }
 
     [SerializeField] private Vector2Int targetGridPosition;
 

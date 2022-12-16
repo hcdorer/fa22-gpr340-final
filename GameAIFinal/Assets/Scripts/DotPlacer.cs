@@ -10,7 +10,7 @@ public class DotPlacer : MonoBehaviour {
     [SerializeField] private Vector2Int[] powerDotGridPositions;
 
     [ContextMenu("Place Dots")]
-    void placeDots() {
+    private void placeDots() {
         if(dotHolder != null) {
             DestroyImmediate(dotHolder);
         }
@@ -19,7 +19,7 @@ public class DotPlacer : MonoBehaviour {
         GridBuilder gridBuilder = GetComponent<GridBuilder>();
 
         initDotHolder(levelGrid, gridBuilder);
-        createDots(levelGrid, gridBuilder);
+        createDots(levelGrid);
     }
 
     private void initDotHolder(Grid levelGrid, GridBuilder gridBuilder) {
@@ -28,26 +28,22 @@ public class DotPlacer : MonoBehaviour {
         dotHolder.transform.position = levelGrid.CellToWorld(new Vector3Int(gridBuilder.StartPosition.x, gridBuilder.StartPosition.y, 0));
     }
 
-    private void createDots(Grid levelGrid, GridBuilder gridBuilder) {
-        for(int i = gridBuilder.StartPosition.y; i < gridBuilder.StartPosition.y + gridBuilder.Rows; i++) {
-            for(int j = gridBuilder.StartPosition.x; j < gridBuilder.StartPosition.x + gridBuilder.Columns; j++) {
-                Square current = Square.getSquareAt(GetComponent<Grid>().CellToWorld(new Vector3Int(j, i, 0)));
-                if(!current.NorthWall || !current.EastWall || !current.SouthWall || !current.WestWall) {
-                    // Dot dot = Instantiate(dotPrefab, dotHolder.transform);
-                    Dot dot;
-                    Vector2Int newPos = new Vector2Int(j, i);
+    private void createDots(Grid levelGrid) {
+        foreach(Square square in FindObjectsOfType<Square>()) {
+            if(!square.NorthWall || !square.EastWall || !square.SouthWall || !square.WestWall) {
+                Dot dot;
+                Vector2Int newPos = new Vector2Int(square.GridPosition.x, square.GridPosition.y);
 
-                    if(powerDotGridPositions.Contains(newPos)) {
-                        dot = Instantiate(powerDotPrefab, dotHolder.transform).GetComponent<PowerDot>();
-                        dot.name = "PowerDot_" + j + "_" + i;
-                    } else {
-                        dot = Instantiate(dotPrefab, dotHolder.transform).GetComponent<Dot>();
-                        dot.name = "Dot_" + j + "_" + i;
-                    }
-                    
-                    dot.LevelGrid = GetComponent<Grid>();
-                    dot.GridPosition = new Vector2Int(j, i);
+                if(powerDotGridPositions.Contains(newPos)) {
+                    dot = Instantiate(powerDotPrefab, dotHolder.transform).GetComponent<PowerDot>();
+                    dot.name = "PowerDot_" + square.GridPosition.x + "_" + square.GridPosition.y;
+                } else {
+                    dot = Instantiate(dotPrefab, dotHolder.transform).GetComponent<Dot>();
+                    dot.name = "Dot_" + square.GridPosition.x + "_" + square.GridPosition.y;
                 }
+
+                dot.LevelGrid = GetComponent<Grid>();
+                dot.GridPosition = new Vector2Int(square.GridPosition.x, square.GridPosition.y);
             }
         }
     }
