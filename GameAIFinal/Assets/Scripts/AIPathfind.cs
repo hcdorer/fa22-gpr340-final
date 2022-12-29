@@ -1,10 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class AIPathfind : GridAligned
-{
+[Serializable]
+public class TargetUpdatedEvent : UnityEvent<Vector3> { }
+
+public class AIPathfind : GridAligned {
     Path path;
     int pathIndex;
     public Square square { get => Square.getSquareAt(transform.position); }
@@ -12,9 +15,9 @@ public class AIPathfind : GridAligned
     [SerializeField] private Vector2Int targetGridPosition;
 
     private CharacterMovement movement;
-    public CharacterMovement Movement { get => movement; }
 
     public UnityEvent onTargetReached;
+    public TargetUpdatedEvent onTargetUpdated;
 
     private void Start() {
         movement = GetComponent<CharacterMovement>();
@@ -22,11 +25,15 @@ public class AIPathfind : GridAligned
 
     public void onNextSquareReached() {
         Square nextSquare;
-        if(pathIndex <= path.length - 2) {
-            nextSquare = path.pathList[pathIndex + 1].Square;
-            if(square != nextSquare) {
-                return;
+        if(path != null) {
+            if(pathIndex <= path.length - 2) {
+                nextSquare = path.pathList[pathIndex + 1].Square;
+                if(square != nextSquare) {
+                    return;
+                }
             }
+        } else {
+            Debug.Log(gameObject.name + "'s path is null");
         }
 
         if(pathIndex == path.length - 1) {
@@ -48,9 +55,11 @@ public class AIPathfind : GridAligned
     }
 
     public void setPath(Square square) {
-        Debug.Log(gameObject.name + " pathfinding to " + square.name);
+        // Debug.Log(gameObject.name + " pathfinding to " + square.name);
         path = new Path(this.square, square);
         pathIndex = 0;
         setDirection();
+
+        onTargetUpdated.Invoke(path.last.transform.position);
     }
 }
