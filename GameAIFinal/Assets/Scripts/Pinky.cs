@@ -7,27 +7,32 @@ public class Pinky : GhostBrain {
         CharacterMovement pacman = FindObjectOfType<PacManInput>().GetComponent<CharacterMovement>();
         Vector2Int targetPosition = pacman.GridPosition;
 
-        int squaresMoved = 0;
         Square current = pacman.square;
         Vector2Int currentDirection = pacman.Direction;
         Grid levelGrid = GetComponent<GridAligned>().LevelGrid;
+
+        int squaresMoved = 0;
         while(squaresMoved < 4) {
-            if(canMoveIntoSquare(current, currentDirection)) {
-                targetPosition += pacman.Direction;
-                current = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(targetPosition.x, targetPosition.y, 0)));
-            } else if(canMoveIntoSquare(current, Vector2Int.up)) {
-                targetPosition += Vector2Int.up;
-                current = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(targetPosition.x, targetPosition.y, 0)));
-            } else if(canMoveIntoSquare(current, Vector2Int.right)) {
-                targetPosition += Vector2Int.right;
-                current = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(targetPosition.x, targetPosition.y, 0)));
-            } else if(canMoveIntoSquare(current, Vector2Int.down)) {
-                targetPosition += Vector2Int.down;
-                current = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(targetPosition.x, targetPosition.y, 0)));
-            } else if(canMoveIntoSquare(current, Vector2Int.left)) {
-                targetPosition += Vector2Int.left;
-                current = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(targetPosition.x, targetPosition.y, 0)));
+            Vector2Int nextDirection = currentDirection;
+
+            bool validDirection = canMoveIntoSquare(current, nextDirection);
+            while(!validDirection) {
+                Vector2Int[] directions = { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
+                bool[] directionChecked = { false, false, false, false };
+                
+                int roll = Random.Range(0, directions.Length - 1);
+                if(directionChecked[roll]) {
+                    continue;
+                }
+
+                nextDirection = directions[roll];
+                validDirection = canMoveIntoSquare(current, nextDirection);
+                directionChecked[roll] = true;
             }
+
+            currentDirection = nextDirection;
+            targetPosition += currentDirection;
+            current = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(targetPosition.x, targetPosition.y, 0)));
 
             squaresMoved++;
         }
