@@ -19,6 +19,12 @@ public class Pinky : GhostBrain {
             while(!validDirection) {
                 Vector2Int[] directions = { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
                 bool[] directionChecked = { false, false, false, false };
+
+                for(int i = 0; i < directions.Length; i++) {
+                    if(directions[i] == pacman.Direction) {
+                        directionChecked[i] = true;
+                    }
+                }
                 
                 int roll = Random.Range(0, directions.Length - 1);
                 if(directionChecked[roll]) {
