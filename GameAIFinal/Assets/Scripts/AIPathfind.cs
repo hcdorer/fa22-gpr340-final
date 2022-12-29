@@ -1,11 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-
-[Serializable]
-public class TargetUpdatedEvent : UnityEvent<Vector3> { }
 
 public class AIPathfind : GridAligned {
     Path path;
@@ -17,6 +13,7 @@ public class AIPathfind : GridAligned {
     private CharacterMovement movement;
 
     public UnityEvent onTargetReached;
+    [System.Serializable] public class TargetUpdatedEvent : UnityEvent<Vector3> { }
     public TargetUpdatedEvent onTargetUpdated;
 
     private void Start() {

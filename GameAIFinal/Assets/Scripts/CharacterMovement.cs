@@ -12,6 +12,8 @@ public class CharacterMovement : GridAligned {
     public Square square { get => Square.getSquareAt(transform.position); }
 
     public UnityEvent onTargetReached;
+    [System.Serializable] public class TargetUpdatedEvent : UnityEvent<Vector3> { }
+    public TargetUpdatedEvent onTargetUpdated;
 
     private void Start() {
         targetGridPosition = gridPosition + direction;
@@ -31,8 +33,15 @@ public class CharacterMovement : GridAligned {
 
     private void setNextTarget() {
         Vector2Int nextTarget = gridPosition + direction;
-        if(canMoveIntoSquare(Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0))))) {
-            targetGridPosition = nextTarget;
+        Square nextSquare = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0)));
+        if(nextSquare != null) {
+            if(canMoveIntoSquare(nextSquare)) {
+                targetGridPosition = nextTarget;
+            }
+
+            onTargetUpdated.Invoke(nextSquare.transform.position);
+        } else {
+            Debug.Log(gameObject.name + " couldn't find a square at grid position " + nextTarget);
         }
     }
 
