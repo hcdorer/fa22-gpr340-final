@@ -25,55 +25,13 @@ public class Path {
         closed.Add(current);
 
         while(current.Square != target) {
-            SquareNode[] neighborNodes = current.getNeighborNodes();
-            bool[] alreadyExists = new bool[neighborNodes.Length];
-
-            for(int i = 0; i < neighborNodes.Length; i++) {
-                if(neighborNodes[i] != null) {
-                    foreach(SquareNode n in open) {
-                        if(neighborNodes[i].Equals(n)) {
-                            neighborNodes[i] = n;
-                            alreadyExists[i] = true;
-                        }
-                    }
-
-                    foreach(SquareNode n in closed) {
-                        if(neighborNodes[i].Equals(n)) {
-                            neighborNodes[i] = n;
-                            alreadyExists[i] = true;
-                        }
-                    }
-                }
-            }
-
-            foreach(SquareNode neighbor in neighborNodes) {
-                if(neighbor != null) {
-                    if(SquareNode.getNewGCost(current, neighbor) < neighbor.GCost) {
-                        neighbor.Previous = current;
-                    }
-
-                    if(canMoveIntoSquare(neighbor.Square, current.Square) && !closed.Contains(neighbor)) {
-                        open.Add(neighbor);
-                    }
-                }
-            }
+            updateOpen(current, open, closed);
 
             if(open.Count <= 0) {
                 break;
             }
 
-            int lowestFCost = open[0].FCost;
-            int lowestIndex = 0;
-            for(int i = 0; i < open.Count; i++) {
-                if(open[i].FCost < lowestFCost) {
-                    lowestFCost = open[i].FCost;
-                    lowestIndex = i;
-                } else if(open[i].FCost == lowestFCost && open[i].HCost < open[lowestIndex].HCost) {
-                    lowestIndex = i;
-                }
-            }
-
-            current = open[lowestIndex];
+            current = getCheapestFCost(open);
             closed.Add(current);
             open.Remove(current);
         }
@@ -83,6 +41,50 @@ public class Path {
             while(current != null) { // LinkedList style
                 pathList.Insert(0, current);
                 current = current.Previous;
+            }
+        }
+    }
+
+    private static SquareNode getCheapestFCost(List<SquareNode> open) {
+        int lowestFCost = open[0].FCost;
+        int lowestIndex = 0;
+        for(int i = 0; i < open.Count; i++) {
+            if(open[i].FCost < lowestFCost) {
+                lowestFCost = open[i].FCost;
+                lowestIndex = i;
+            } else if(open[i].FCost == lowestFCost && open[i].HCost < open[lowestIndex].HCost) {
+                lowestIndex = i;
+            }
+        }
+
+        return open[lowestIndex];
+    }
+
+    private void updateOpen(SquareNode current, List<SquareNode> open, List<SquareNode> closed) {
+        SquareNode[] neighborNodes = current.getNeighborNodes();
+
+        foreach(SquareNode node in neighborNodes) {
+            if(node != null) {
+                updateMemberReferences(node, open);
+                updateMemberReferences(node, closed);
+            }
+
+            if(node != null) {
+                if(SquareNode.getNewGCost(current, node) < node.GCost) {
+                    node.Previous = current;
+                }
+
+                if(canMoveIntoSquare(node.Square, current.Square) && !closed.Contains(node)) {
+                    open.Add(node);
+                }
+            }
+        }
+    }
+
+    private static void updateMemberReferences(SquareNode node, List<SquareNode> list) {
+        foreach(SquareNode listNode in list) {
+            if(listNode.Equals(listNode)) {
+                node = listNode;
             }
         }
     }
