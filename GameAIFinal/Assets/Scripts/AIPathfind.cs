@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class AIPathfind : GridAligned {
     Path path;
     int pathIndex;
-    public Square square { get => Square.getSquareAt(transform.position); }
 
     [SerializeField] private Vector2Int targetGridPosition;
 
@@ -30,7 +29,7 @@ public class AIPathfind : GridAligned {
 
         if(pathIndex <= path.length - 2) {
             nextSquare = path.pathList[pathIndex + 1].Square;
-            if(square != nextSquare) {
+            if(movement.square != nextSquare) {
                 return;
             }
         }
@@ -46,16 +45,13 @@ public class AIPathfind : GridAligned {
     private void setDirection() {
         if(pathIndex <= path.length - 2) {
             Square nextSquare = path.pathList[pathIndex + 1].Square;
-            Vector2Int delta = nextSquare.GridPosition - square.GridPosition;
-            if(movement != null) {
-                movement.Direction = delta;
-            }
+            Vector2Int delta = nextSquare.GridPosition - movement.square.GridPosition;
+            movement.Direction = delta;
         }
     }
 
     public void setPath(Square square) {
-        // Debug.Log(gameObject.name + " pathfinding to " + square.name);
-        path = new Path(this.square, square);
+        path = new Path(movement.square, square);
         pathIndex = 0;
         setDirection();
 

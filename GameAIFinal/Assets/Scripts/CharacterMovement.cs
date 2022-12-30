@@ -14,6 +14,7 @@ public class CharacterMovement : GridAligned {
     public UnityEvent onTargetReached;
     [System.Serializable] public class TargetUpdatedEvent : UnityEvent<Vector3> { }
     public TargetUpdatedEvent onTargetUpdated;
+    public UnityEvent onNextUnreachable;
 
     private void Start() {
         targetGridPosition = gridPosition + direction;
@@ -22,10 +23,9 @@ public class CharacterMovement : GridAligned {
 
     private void Update() {
         if(lerp()) {
+            onTargetReached.Invoke();
             gridPosition = targetGridPosition;
             setNextTarget();
-
-            onTargetReached.Invoke();
         } else {
             setNextTarget();
         }
@@ -34,22 +34,24 @@ public class CharacterMovement : GridAligned {
     private void setNextTarget() {
         Vector2Int nextTarget = gridPosition + direction;
         Square nextSquare = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0)));
-        if(nextSquare != null) {
-            if(canMoveIntoSquare(nextSquare)) {
-                targetGridPosition = nextTarget;
-            }
-
-            onTargetUpdated.Invoke(nextSquare.transform.position);
-        } else {
+        if(nextSquare == null) {
             Debug.Log(gameObject.name + " couldn't find a square at grid position " + nextTarget);
+            return;
         }
+
+        if(!canMoveIntoSquare(nextSquare)) {
+            onNextUnreachable.Invoke();
+            return;
+        }
+
+        targetGridPosition = nextTarget;
+        onTargetUpdated.Invoke(nextSquare.transform.position);
     }
 
     private bool lerp() {
         Vector3 targetPosition = levelGrid.CellToWorld(new Vector3Int(targetGridPosition.x, targetGridPosition.y, 0));
 
         if(!canMoveIntoSquare(Square.getSquareAt(targetPosition))) {
-            // onLerpFail.Invoke();
             return false;
         }
 
@@ -61,7 +63,7 @@ public class CharacterMovement : GridAligned {
         return false;
     }
 
-    private bool canMoveIntoSquare(Square square) {
+    public bool canMoveIntoSquare(Square square) {
         if(square == null) {
             return false;
         }

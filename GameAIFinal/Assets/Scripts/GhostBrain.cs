@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class GhostBrain : MonoBehaviour {
-    protected enum Behavior {
+    private enum Behavior {
         CHASE,
         SCATTER,
         FRIGHTENED
@@ -19,21 +19,27 @@ public abstract class GhostBrain : MonoBehaviour {
     private const float SCATTER_TIMER_START_PHASE_4 = 5;
     
     private int phase = 0;
-    protected Behavior behavior = Behavior.SCATTER;
+    private Behavior behavior = Behavior.SCATTER;
     private float phaseTimer = SCATTER_TIMER_START_PHASE_0;
 
     [SerializeField] private Square scatterCorner;
     [SerializeField] private Square scatterOpposite;
-    bool targetOpposite = false;
+    private bool targetOpposite = false;
 
     protected Square lastKnownCrossroads;
     private Square playerSquare { get => FindObjectOfType<PacManInput>().GetComponent<CharacterMovement>().square; }
 
+    private bool stuck = false;
+    private bool stuckThisFrame = false;
+
+    private CharacterMovement movement;
     protected AIPathfind pathfind;
 
     private void Start() {
+        movement = GetComponent<CharacterMovement>();
         pathfind = GetComponent<AIPathfind>();
-        pathfind.setPath(scatterCorner);
+
+        setPathFromBehavior();
     }
 
     private void OnEnable() {
@@ -47,6 +53,8 @@ public abstract class GhostBrain : MonoBehaviour {
         if(phaseTimer <= 0 && phase < 7) {
             advancePhase();
         }
+
+        stuckThisFrame = false;
     }
 
     private void advancePhase() {
@@ -68,18 +76,17 @@ public abstract class GhostBrain : MonoBehaviour {
     }
 
     private void onCrossroadsReached(object sender, EventArgs e) {
-        Crossroads crossroadsSender = (Crossroads)sender;
+        Crossroads crossroads = (Crossroads)sender;
 
-        lastKnownCrossroads = crossroadsSender.square;
+        lastKnownCrossroads = crossroads.square;
         if(behavior == Behavior.CHASE) {
             pathfind.setPath(getChaseTarget());
         }
     }
 
-    public void onTargetReached() {
+    private void setPathFromBehavior() {
         switch(behavior) {
             case Behavior.SCATTER:
-                targetOpposite = !targetOpposite;
                 pathfind.setPath(targetOpposite ? scatterOpposite : scatterCorner);
                 break;
             case Behavior.CHASE:
@@ -89,4 +96,48 @@ public abstract class GhostBrain : MonoBehaviour {
     }
 
     protected abstract Square getChaseTarget();
+
+    public void chooseRandomDirection() {
+        stuck = true;
+        stuckThisFrame = true;
+        
+        Vector2Int[] directions = { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
+        bool[] directionChecked = { false, false, false, false };
+        for(int i = 0; i < directions.Length; i++) {
+            if(directions[i] == movement.Direction) {
+                directionChecked[i] = true;
+                break;
+            }
+        }
+        
+        Vector2Int nextDirection = movement.Direction;
+        bool validDirection = false;
+        while(!validDirection) {
+            int roll = UnityEngine.Random.Range(0, directions.Length - 1);
+            if(directionChecked[roll]) {
+                continue;
+            }
+
+            nextDirection = directions[roll];
+            Vector2Int nextTarget = movement.GridPosition + nextDirection;
+            validDirection = movement.canMoveIntoSquare(Square.getSquareAt(pathfind.LevelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0))));
+            directionChecked[roll] = true;
+        }
+
+        movement.Direction = nextDirection;
+    }
+
+    public void remakePath() {
+        if(stuck && !stuckThisFrame) {
+            setPathFromBehavior();
+            stuck = false;
+        }
+    }
+
+    public void updatePath() {
+        if(behavior == Behavior.SCATTER) {
+            targetOpposite = !targetOpposite;
+        }
+        setPathFromBehavior();
+    }
 }

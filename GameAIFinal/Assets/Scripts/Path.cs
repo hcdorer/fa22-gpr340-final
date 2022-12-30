@@ -9,7 +9,7 @@ using UnityEngine;
 public class Path {
     public List<SquareNode> pathList { get; private set; }
     public int length { get => pathList.Count; }
-    public bool isValid { get => pathList == null; }
+    public bool isValid { get => pathList != null; }
     public Square last { get => pathList[length - 1].Square; }
 
     public Path(Square origin, Square target) {
@@ -87,23 +87,23 @@ public class Path {
         }
     }
 
-    private bool canMoveIntoSquare(Square square, Square current) {
-        if(square == null) {
+    private bool canMoveIntoSquare(Square next, Square current) {
+        if(next == null) {
             return false;
         }
 
-        Vector2Int delta = square.GridPosition - current.GridPosition;
+        Vector2Int delta = next.GridPosition - current.GridPosition;
         if(delta.y > 0) {
-            return !square.SouthWall;
+            return !next.SouthWall;
         }
         if(delta.x > 0) {
-            return !square.WestWall;
+            return !next.WestWall;
         }
         if(delta.y < 0) {
-            return !square.NorthWall;
+            return !next.NorthWall;
         }
         if(delta.x < 0) {
-            return !square.EastWall;
+            return !next.EastWall;
         }
 
         return false;

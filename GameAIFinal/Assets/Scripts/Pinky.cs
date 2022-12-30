@@ -13,19 +13,18 @@ public class Pinky : GhostBrain {
 
         int squaresMoved = 0;
         while(squaresMoved < 4) {
-            Vector2Int nextDirection = currentDirection;
-
-            bool validDirection = canMoveIntoSquare(current, nextDirection);
-            while(!validDirection) {
-                Vector2Int[] directions = { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
-                bool[] directionChecked = { false, false, false, false };
-
-                for(int i = 0; i < directions.Length; i++) {
-                    if(directions[i] == pacman.Direction) {
-                        directionChecked[i] = true;
-                    }
+            Vector2Int[] directions = { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
+            bool[] directionChecked = { false, false, false, false };
+            for(int i = 0; i < directions.Length; i++) {
+                if(directions[i] == pacman.Direction) {
+                    directionChecked[i] = true;
+                    break;
                 }
-                
+            }
+            
+            Vector2Int nextDirection = currentDirection;
+            bool validDirection = canMoveIntoSquare(current, nextDirection);
+            while(!validDirection) {                
                 int roll = Random.Range(0, directions.Length - 1);
                 if(directionChecked[roll]) {
                     continue;
