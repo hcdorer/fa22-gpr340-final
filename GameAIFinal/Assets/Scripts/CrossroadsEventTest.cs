@@ -18,7 +18,5 @@ public class CrossroadsEventTest : MonoBehaviour {
 
     private void onCrossroadsReached(object sender, EventArgs e) {
         Crossroads senderCrossroads = (Crossroads)sender;
-
-        Debug.Log("Crossed " + senderCrossroads.name);
     }
 }

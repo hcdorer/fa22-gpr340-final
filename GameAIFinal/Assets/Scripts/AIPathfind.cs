@@ -22,8 +22,7 @@ public class AIPathfind : GridAligned {
     public void onNextSquareReached() {
         Square nextSquare;
 
-        if(!path.isValid) {
-            Debug.Log(gameObject.name + "'s path is invalid");
+        if(path == null || !path.isValid) {
             return;
         }
 

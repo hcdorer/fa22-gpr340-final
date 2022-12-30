@@ -100,28 +100,21 @@ public abstract class GhostBrain : MonoBehaviour {
     public void chooseRandomDirection() {
         stuck = true;
         stuckThisFrame = true;
-        
-        Vector2Int[] directions = { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
-        bool[] directionChecked = { false, false, false, false };
-        for(int i = 0; i < directions.Length; i++) {
-            if(directions[i] == movement.Direction) {
-                directionChecked[i] = true;
-                break;
-            }
+
+        List<Vector2Int> directions = new List<Vector2Int>() { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
+        if(directions.Contains(movement.Direction)) {
+            directions.Remove(movement.Direction);
         }
         
         Vector2Int nextDirection = movement.Direction;
-        bool validDirection = false;
+        Vector2Int nextTarget = movement.GridPosition + nextDirection;
+        bool validDirection = movement.canMoveIntoSquare(Square.getSquareAt(pathfind.LevelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0))));
         while(!validDirection) {
-            int roll = UnityEngine.Random.Range(0, directions.Length - 1);
-            if(directionChecked[roll]) {
-                continue;
-            }
+            int roll = UnityEngine.Random.Range(0, directions.Count - 1);
 
             nextDirection = directions[roll];
-            Vector2Int nextTarget = movement.GridPosition + nextDirection;
+            nextTarget = movement.GridPosition + nextDirection;
             validDirection = movement.canMoveIntoSquare(Square.getSquareAt(pathfind.LevelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0))));
-            directionChecked[roll] = true;
         }
 
         movement.Direction = nextDirection;
