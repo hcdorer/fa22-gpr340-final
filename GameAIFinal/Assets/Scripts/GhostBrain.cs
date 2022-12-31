@@ -39,7 +39,7 @@ public abstract class GhostBrain : MonoBehaviour {
         movement = GetComponent<CharacterMovement>();
         pathfind = GetComponent<AIPathfind>();
 
-        setPathFromBehavior();
+        setPathFromBehavior(false);
     }
 
     private void OnEnable() {
@@ -63,12 +63,13 @@ public abstract class GhostBrain : MonoBehaviour {
         if(phase % 2 == 0) {
             behavior = Behavior.SCATTER;
             phaseTimer = phase > 4 ? SCATTER_TIMER_START_PHASE_4 : SCATTER_TIMER_START_PHASE_0;
-            pathfind.setPath(scatterCorner);
+            targetOpposite = false;
+            setPathFromBehavior(false);
         } else {
             behavior = Behavior.CHASE;
             phaseTimer = CHASE_TIMER_START;
             if(lastKnownCrossroads != null) {
-                pathfind.setPath(getChaseTarget());
+                setPathFromBehavior(false);
             } else {
                 behavior = Behavior.SCATTER;
             }
@@ -79,18 +80,16 @@ public abstract class GhostBrain : MonoBehaviour {
         Crossroads crossroads = (Crossroads)sender;
 
         lastKnownCrossroads = crossroads.square;
-        if(behavior == Behavior.CHASE) {
-            pathfind.setPath(getChaseTarget());
-        }
+        setPathFromBehavior(false);
     }
 
-    private void setPathFromBehavior() {
+    private void setPathFromBehavior(bool chasePlayer) {
         switch(behavior) {
             case Behavior.SCATTER:
                 pathfind.setPath(targetOpposite ? scatterOpposite : scatterCorner);
                 break;
             case Behavior.CHASE:
-                pathfind.setPath(playerSquare);
+                pathfind.setPath(chasePlayer ? playerSquare : getChaseTarget());
                 break;
         }
     }
@@ -121,7 +120,7 @@ public abstract class GhostBrain : MonoBehaviour {
 
     public void remakePath() {
         if(stuck && !stuckThisFrame) {
-            setPathFromBehavior();
+            setPathFromBehavior(false);
             stuck = false;
         }
     }
@@ -130,6 +129,6 @@ public abstract class GhostBrain : MonoBehaviour {
         if(behavior == Behavior.SCATTER) {
             targetOpposite = !targetOpposite;
         }
-        setPathFromBehavior();
+        setPathFromBehavior(true);
     }
 }
