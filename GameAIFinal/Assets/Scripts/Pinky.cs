@@ -13,6 +13,7 @@ public class Pinky : GhostBrain {
 
         int squaresMoved = 0;
         while(squaresMoved < 4) {
+            Debug.Log("Pinky.cs 15");
             List<Vector2Int> directions = new List<Vector2Int>() { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
             if(directions.Contains(currentDirection)) {
                 directions.Remove(currentDirection);
@@ -21,10 +22,12 @@ public class Pinky : GhostBrain {
             Vector2Int nextDirection = currentDirection;
             bool validDirection = canMoveIntoSquare(current, nextDirection);
             while(!validDirection) {
+                Debug.Log("Pinky.cs 23");
                 int roll = Random.Range(0, directions.Count - 1);
 
                 nextDirection = directions[roll];
                 validDirection = canMoveIntoSquare(current, nextDirection);
+                directions.Remove(directions[roll]);
             }
 
             currentDirection = nextDirection;

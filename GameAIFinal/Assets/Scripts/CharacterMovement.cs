@@ -35,7 +35,6 @@ public class CharacterMovement : GridAligned {
         Vector2Int nextTarget = gridPosition + direction;
         Square nextSquare = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0)));
         if(nextSquare == null) {
-            Debug.Log(gameObject.name + " couldn't find a square at grid position " + nextTarget);
             return;
         }
 

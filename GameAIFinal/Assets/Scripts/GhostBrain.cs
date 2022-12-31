@@ -115,6 +115,7 @@ public abstract class GhostBrain : MonoBehaviour {
             nextDirection = directions[roll];
             nextTarget = movement.GridPosition + nextDirection;
             validDirection = movement.canMoveIntoSquare(Square.getSquareAt(pathfind.LevelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0))));
+            directions.Remove(directions[roll]);
         }
 
         movement.Direction = nextDirection;
