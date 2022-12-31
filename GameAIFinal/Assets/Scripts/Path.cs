@@ -64,19 +64,19 @@ public class Path {
         SquareNode[] neighborNodes = current.getNeighborNodes();
 
         foreach(SquareNode node in neighborNodes) {
-            if(node != null) {
-                updateMemberReferences(node, open);
-                updateMemberReferences(node, closed);
+            if(node == null) {
+                continue;
             }
 
-            if(node != null) {
-                if(SquareNode.getNewGCost(current, node) < node.GCost) {
-                    node.Previous = current;
-                }
+            updateMemberReferences(node, open);
+            updateMemberReferences(node, closed);
 
-                if(canMoveIntoSquare(node.Square, current.Square) && !closed.Contains(node)) {
-                    open.Add(node);
-                }
+            if(SquareNode.getNewGCost(current, node) < node.GCost) {
+                node.Previous = current;
+            }
+
+            if(canMoveIntoSquare(node.Square, current.Square) && !closed.Contains(node)) {
+                open.Add(node);
             }
         }
     }
