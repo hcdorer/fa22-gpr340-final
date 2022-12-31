@@ -95,16 +95,16 @@ public class Path {
         }
 
         Vector2Int delta = next.GridPosition - current.GridPosition;
-        if(delta.y > 0) {
+        if(delta == Vector2.up) {
             return !next.SouthWall;
         }
-        if(delta.x > 0) {
+        if(delta == Vector2.right) {
             return !next.WestWall;
         }
-        if(delta.y < 0) {
+        if(delta == Vector2.down) {
             return !next.NorthWall;
         }
-        if(delta.x < 0) {
+        if(delta == Vector2Int.left) {
             return !next.EastWall;
         }
 

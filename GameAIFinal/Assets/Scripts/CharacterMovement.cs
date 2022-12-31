@@ -67,17 +67,41 @@ public class CharacterMovement : GridAligned {
             return false;
         }
 
-        if(direction.y > 0) {
+        if(direction == Vector2Int.up) {
             return !square.SouthWall;
         }
-        if(direction.x > 0) {
+        if(direction == Vector2Int.right) {
             return !square.WestWall;
         }
-        if(direction.y < 0) {
+        if(direction == Vector2Int.down) {
             return !square.NorthWall;
         }
-        if(direction.x < 0) {
+        if(direction == Vector2Int.left) {
             return !square.EastWall;
+        }
+
+        return false;
+    }
+    
+    public bool canMoveIntoSquare(Vector2Int direction) {
+        Vector2Int nextGridPosition = gridPosition + direction;
+        Square squareAtNextGridPosition = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(nextGridPosition.x, nextGridPosition.y, 0)));
+
+        if(squareAtNextGridPosition == null) {
+            return false;
+        }
+
+        if(direction == Vector2Int.up) {
+            return !squareAtNextGridPosition.SouthWall;
+        }
+        if(direction == Vector2Int.right) {
+            return !squareAtNextGridPosition.WestWall;
+        }
+        if(direction == Vector2Int.down) {
+            return !squareAtNextGridPosition.NorthWall;
+        }
+        if(direction == Vector2Int.left) {
+            return !squareAtNextGridPosition.EastWall;
         }
 
         return false;
