@@ -9,7 +9,7 @@ public class CharacterMovement : GridAligned {
     private Vector2Int targetGridPosition;
     [SerializeField] private float moveSpeed;
 
-    public Square square { get => Square.getSquareAt(transform.position); }
+    public Square square { get => Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(gridPosition.x, gridPosition.y, 0))); }
 
     public UnityEvent onTargetReached;
     [System.Serializable] public class TargetUpdatedEvent : UnityEvent<Vector3> { }

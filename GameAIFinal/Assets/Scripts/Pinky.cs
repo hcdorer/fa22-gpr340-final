@@ -19,18 +19,23 @@ public class Pinky : GhostBrain {
             }
             
             Vector2Int nextDirection = currentDirection;
-            bool validDirection = canMoveIntoSquare(current, nextDirection);
+            Vector2Int nextTargetPosition = targetPosition + nextDirection;
+            Square nextSquare = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(nextTargetPosition.x, nextTargetPosition.y, 0)));
+            bool validDirection = canMoveIntoSquare(current, nextSquare);
             while(!validDirection) {
                 int roll = Random.Range(0, directions.Count - 1);
 
                 nextDirection = directions[roll];
-                validDirection = canMoveIntoSquare(current, nextDirection);
+                nextTargetPosition = targetPosition + nextDirection;
+                nextSquare = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(nextTargetPosition.x, nextTargetPosition.y, 0)));
+                validDirection = canMoveIntoSquare(current, nextSquare);
+                
                 directions.Remove(directions[roll]);
             }
 
             currentDirection = nextDirection;
-            targetPosition += currentDirection;
-            current = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(targetPosition.x, targetPosition.y, 0)));
+            targetPosition = nextTargetPosition;
+            current = nextSquare;
 
             squaresMoved++;
         }
@@ -38,18 +43,24 @@ public class Pinky : GhostBrain {
         return current;
     }
 
-    private bool canMoveIntoSquare(Square square, Vector2Int delta) {
+    private bool canMoveIntoSquare(Square current, Square next) {
+        if(next == null) {
+            return false;
+        }
+
+        Vector2Int delta = next.GridPosition - current.GridPosition;
+
         if(delta == Vector2.up) {
-            return !square.NorthWall;
+            return !next.SouthWall;
         }
         if(delta == Vector2.right) {
-            return !square.EastWall;
+            return !next.WestWall;
         }
         if(delta == Vector2.down) {
-            return !square.SouthWall;
+            return !next.NorthWall;
         }
         if(delta == Vector2.left) {
-            return !square.WestWall;
+            return !next.EastWall;
         }
 
         return false;
