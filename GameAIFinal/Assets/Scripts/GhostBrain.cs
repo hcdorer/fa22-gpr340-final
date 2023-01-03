@@ -35,10 +35,12 @@ public abstract class GhostBrain : MonoBehaviour {
     private CharacterMovement movement;
     protected AIPathfind pathfind;
 
-    private void Start() {
+    private void Awake() {
         movement = GetComponent<CharacterMovement>();
         pathfind = GetComponent<AIPathfind>();
+    }
 
+    private void Start() {
         setPathFromBehavior(false);
     }
 

@@ -15,7 +15,7 @@ public class AIPathfind : GridAligned {
     [System.Serializable] public class TargetUpdatedEvent : UnityEvent<Vector3> { }
     public TargetUpdatedEvent onTargetUpdated;
 
-    private void Start() {
+    private void Awake() {
         movement = GetComponent<CharacterMovement>();
     }
 

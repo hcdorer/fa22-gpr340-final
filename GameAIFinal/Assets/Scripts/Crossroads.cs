@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Crossroads : GridAligned {
-    public Square square { get => Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(gridPosition.x, gridPosition.y, 0))); }
+    public Square square { get => Square.getSquareAt(transform.position); }
 
     public delegate void CrossroadsReachedEventHandler(object sender, EventArgs e);
     public event CrossroadsReachedEventHandler crossroadsReachedEvent;

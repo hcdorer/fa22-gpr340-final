@@ -6,7 +6,7 @@ using UnityEngine;
 public class PacManInput : MonoBehaviour {
     private CharacterMovement movement;
 
-    private void Start() {
+    private void Awake() {
         movement = GetComponent<CharacterMovement>();
     }
 
