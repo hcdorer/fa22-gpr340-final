@@ -19,6 +19,10 @@ public class Path {
     public int length { get => getLength(); }
     public bool isValid { get => pathList != null; }
     public Square last { get => getLast(); }
+
+    public Square this[int i] {
+        get => getPathPoint(i);
+    }
     
     public Path(Square origin, Square target) {
         pathList = null;
@@ -44,6 +48,13 @@ public class Path {
             throw new PathNotValidException();
         }
         return pathList[length - 1].Square;
+    }
+
+    private Square getPathPoint(int i) {
+        if(!isValid) {
+            throw new PathNotValidException();
+        }
+        return pathList[i].Square;
     }
 
     private void makePath(Square origin, Square target) {
