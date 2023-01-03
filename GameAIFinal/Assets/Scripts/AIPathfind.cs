@@ -27,7 +27,7 @@ public class AIPathfind : GridAligned {
         }
 
         if(pathIndex <= path.length - 2) {
-            nextSquare = path.pathList[pathIndex + 1].Square;
+            nextSquare = path.PathList[pathIndex + 1].Square;
             if(movement.square != nextSquare) {
                 return;
             }
@@ -43,7 +43,7 @@ public class AIPathfind : GridAligned {
 
     private void setDirection() {
         if(pathIndex <= path.length - 2) {
-            Square nextSquare = path.pathList[pathIndex + 1].Square;
+            Square nextSquare = path.PathList[pathIndex + 1].Square;
             Vector2Int delta = nextSquare.GridPosition - movement.square.GridPosition;
             movement.Direction = delta;
         }

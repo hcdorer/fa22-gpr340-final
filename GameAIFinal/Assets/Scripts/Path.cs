@@ -2,19 +2,48 @@
  * https://www.youtube.com/watch?v=-L-WgKMFuhE
  */
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Path {
-    public List<SquareNode> pathList { get; private set; }
-    public int length { get => pathList.Count; }
-    public bool isValid { get => pathList != null; }
-    public Square last { get => pathList[length - 1].Square; }
+public class PathNotValidException : Exception {
+    public PathNotValidException() : base("This path is not valid.") { }
+    public PathNotValidException(string message) : base(message) { }
+    public PathNotValidException(string message, Exception inner) : base(message, inner) { }
+}
 
+public class Path {
+    private List<SquareNode> pathList;
+    public List<SquareNode> PathList { get => getPathList(); }
+    public int length { get => getLength(); }
+    public bool isValid { get => pathList != null; }
+    public Square last { get => getLast(); }
+    
     public Path(Square origin, Square target) {
         pathList = null;
         makePath(origin, target);
+    }
+
+    private List<SquareNode> getPathList() {
+        if(!isValid) {
+            throw new PathNotValidException();
+        }
+        return pathList;
+    }
+
+    private int getLength() {
+        if(!isValid) {
+            throw new PathNotValidException();
+        }
+        return pathList.Count;
+    }
+
+    private Square getLast() {
+        if(!isValid) {
+            throw new PathNotValidException();
+        }
+        return pathList[length - 1].Square;
     }
 
     private void makePath(Square origin, Square target) {
