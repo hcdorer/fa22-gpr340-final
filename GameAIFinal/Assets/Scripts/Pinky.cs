@@ -15,7 +15,7 @@ public class Pinky : GhostBrain {
         }
         
         Square next = current.getNeighbor(direction);
-        if(CharacterMovement.canMoveIntoSquare(current, direction)) {
+        if(CharacterMovement.canMoveIntoSquare(next, direction)) {
             return moveForward(next, direction, maxDepth, depth + 1);
         }
 

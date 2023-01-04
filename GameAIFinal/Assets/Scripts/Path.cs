@@ -3,9 +3,7 @@
  */
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class PathNotValidException : Exception {
     public PathNotValidException() : base("This path is not valid.") { }
@@ -100,25 +98,25 @@ public class Path {
     private void updateOpen(SquareNode current, List<SquareNode> open, List<SquareNode> closed) {
         SquareNode[] neighborNodes = current.getNeighborNodes();
 
-        foreach(SquareNode node in neighborNodes) {
-            if(node == null) {
+        foreach(SquareNode neighbor in neighborNodes) {
+            if(neighbor == null) {
                 continue;
             }
 
-            updateMemberReferences(node, open);
-            updateMemberReferences(node, closed);
+            updateReferences(neighbor, open);
+            updateReferences(neighbor, closed);
 
-            if(SquareNode.getNewGCost(current, node) < node.GCost) {
-                node.Previous = current;
+            if(SquareNode.getNewGCost(current, neighbor) < neighbor.GCost) {
+                neighbor.Previous = current;
             }
 
-            if(CharacterMovement.canMoveIntoSquare(node.Square, current.Square) && !closed.Contains(node)) {
-                open.Add(node);
+            if(CharacterMovement.canMoveIntoSquare(neighbor.Square, current.Square) && !closed.Contains(neighbor)) {
+                open.Add(neighbor);
             }
         }
     }
 
-    private static void updateMemberReferences(SquareNode node, List<SquareNode> list) {
+    private static void updateReferences(SquareNode node, List<SquareNode> list) {
         foreach(SquareNode listNode in list) {
             if(listNode.Equals(listNode)) {
                 node = listNode;
