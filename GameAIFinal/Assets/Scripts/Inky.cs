@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Inky : GhostBrain {
-    protected override Square getChaseTarget() {
-        CharacterMovement pacman = FindObjectOfType<PacManInput>().GetComponent<CharacterMovement>();
-        CharacterMovement pinky = FindObjectOfType<Pinky>().GetComponent<CharacterMovement>();
-        Vector2Int targetPosition = pinky.GridPosition + (pacman.GridPosition - pinky.GridPosition) * 2;
+    [SerializeField] CharacterMovement pacman;
+    [SerializeField] CharacterMovement pinky;
+    [SerializeField] GridBuilder builder;
 
-        GridBuilder builder = FindObjectOfType<GridBuilder>();
-        targetPosition = new Vector2Int(Mathf.Clamp(targetPosition.x, 0, builder.Columns), Mathf.Clamp(targetPosition.y, 0, builder.Rows));
+    protected override Square getChaseTarget() {
+        Vector2Int targetPosition = pinky.GridPosition + (pacman.GridPosition - pinky.GridPosition) * 2;
+        targetPosition = new Vector2Int(Mathf.Clamp(targetPosition.x, 0, builder.Columns - 1), Mathf.Clamp(targetPosition.y, 0, builder.Rows - 1));
 
         Square current = Square.getSquareAt(pathfind.LevelGrid.CellToWorld(new Vector3Int(targetPosition.x, targetPosition.y, 0)));
         while(current.walledOff) {
