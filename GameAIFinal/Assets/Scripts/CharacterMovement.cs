@@ -33,7 +33,7 @@ public class CharacterMovement : GridAligned {
 
     private void setNextTarget() {
         Vector2Int nextTarget = gridPosition + direction;
-        Square nextSquare = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0)));
+        Square nextSquare = Square.getSquareAt(LevelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0)));
         if(nextSquare == null) {
             return;
         }
@@ -48,7 +48,7 @@ public class CharacterMovement : GridAligned {
     }
 
     private bool lerp() {
-        Vector3 targetPosition = levelGrid.CellToWorld(new Vector3Int(targetGridPosition.x, targetGridPosition.y, 0));
+        Vector3 targetPosition = LevelGrid.CellToWorld(new Vector3Int(targetGridPosition.x, targetGridPosition.y, 0));
 
         if(!canMoveIntoSquare(Square.getSquareAt(targetPosition))) {
             return false;
@@ -85,7 +85,7 @@ public class CharacterMovement : GridAligned {
     
     public bool canMoveIntoSquare(Vector2Int direction) {
         Vector2Int nextGridPosition = gridPosition + direction;
-        Square square = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(nextGridPosition.x, nextGridPosition.y, 0)));
+        Square square = Square.getSquareAt(LevelGrid.CellToWorld(new Vector3Int(nextGridPosition.x, nextGridPosition.y, 0)));
 
         if(square == null) {
             return false;
