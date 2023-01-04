@@ -63,6 +63,12 @@ public abstract class GhostBrain : MonoBehaviour {
         stuckThisFrame = false;
     }
 
+    private void OnDisable() {
+        foreach(Crossroads crossroads in FindObjectsOfType<Crossroads>()) {
+            crossroads.crossroadsReachedEvent -= onCrossroadsReached;
+        }
+    }
+
     private void advancePhase() {
         phase++;
 
@@ -82,10 +88,8 @@ public abstract class GhostBrain : MonoBehaviour {
         }
     }
 
-    private void onCrossroadsReached(object sender, EventArgs e) {
-        Crossroads crossroads = (Crossroads)sender;
-
-        lastKnownCrossroads = crossroads.square;
+    private void onCrossroadsReached(CrossroadsReachedEventArgs e) {
+        lastKnownCrossroads = e.square;
         setPathFromBehavior(false);
     }
 
