@@ -70,6 +70,23 @@ public class Square : GridAligned {
         return results;
     }
 
+    public Square getNeighbor(Vector2Int direction) {
+        if(direction == Vector2.up) {
+            return northNeighbor;
+        }
+        if(direction == Vector2.right) {
+            return eastNeighbor;
+        }
+        if(direction == Vector2.down) {
+            return southNeighbor;
+        }
+        if(direction == Vector2.left) {
+            return westNeighbor;
+        }
+
+        return null;
+    }
+
     public static Square getSquareAt(Vector3 position) {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(position, 0.1f);
         foreach(Collider2D c in colliders) {

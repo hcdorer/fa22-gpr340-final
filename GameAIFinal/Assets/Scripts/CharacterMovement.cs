@@ -85,23 +85,67 @@ public class CharacterMovement : GridAligned {
     
     public bool canMoveIntoSquare(Vector2Int direction) {
         Vector2Int nextGridPosition = gridPosition + direction;
-        Square squareAtNextGridPosition = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(nextGridPosition.x, nextGridPosition.y, 0)));
+        Square square = Square.getSquareAt(levelGrid.CellToWorld(new Vector3Int(nextGridPosition.x, nextGridPosition.y, 0)));
 
-        if(squareAtNextGridPosition == null) {
+        if(square == null) {
             return false;
         }
 
         if(direction == Vector2Int.up) {
-            return !squareAtNextGridPosition.SouthWall;
+            return !square.SouthWall;
         }
         if(direction == Vector2Int.right) {
-            return !squareAtNextGridPosition.WestWall;
+            return !square.WestWall;
         }
         if(direction == Vector2Int.down) {
-            return !squareAtNextGridPosition.NorthWall;
+            return !square.NorthWall;
         }
         if(direction == Vector2Int.left) {
-            return !squareAtNextGridPosition.EastWall;
+            return !square.EastWall;
+        }
+
+        return false;
+    }
+
+    public static bool canMoveIntoSquare(Square square, Vector2Int direction) {
+        if(square == null) {
+            return false;
+        }
+
+        if(direction == Vector2Int.up) {
+            return !square.SouthWall;
+        }
+        if(direction == Vector2Int.right) {
+            return !square.WestWall;
+        }
+        if(direction == Vector2Int.down) {
+            return !square.NorthWall;
+        }
+        if(direction == Vector2Int.left) {
+            return !square.EastWall;
+        }
+
+        return false;
+    }
+
+    public static bool canMoveIntoSquare(Square current, Square next) {
+        if(current == null || next == null) {
+            return false;
+        }
+
+        Vector2Int delta = next.GridPosition - current.GridPosition;
+
+        if(delta == Vector2Int.up) {
+            return !next.SouthWall;
+        }
+        if(delta == Vector2Int.right) {
+            return !next.WestWall;
+        }
+        if(delta == Vector2Int.down) {
+            return !next.NorthWall;
+        }
+        if(delta == Vector2Int.left) {
+            return !next.EastWall;
         }
 
         return false;

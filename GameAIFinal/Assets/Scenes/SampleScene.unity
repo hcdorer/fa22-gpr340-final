@@ -21982,7 +21982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &369390173
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -76204,7 +76204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1218743966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116392,6 +116392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scatterCorner: {fileID: 1406347740}
   scatterOpposite: {fileID: 1730452543}
+  pacman: {fileID: 75938765}
 --- !u!114 &1798686389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119534,7 +119535,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1846899942
 SpriteRenderer:
   m_ObjectHideFlags: 0

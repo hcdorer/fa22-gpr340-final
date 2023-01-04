@@ -19,10 +19,7 @@ public class Path {
     public int length { get => getLength(); }
     public bool isValid { get => pathList != null; }
     public Square last { get => getLast(); }
-
-    public Square this[int i] {
-        get => getPathPoint(i);
-    }
+    public Square this[int i] { get => getPathPoint(i); }
     
     public Path(Square origin, Square target) {
         pathList = null;
@@ -115,7 +112,7 @@ public class Path {
                 node.Previous = current;
             }
 
-            if(canMoveIntoSquare(node.Square, current.Square) && !closed.Contains(node)) {
+            if(CharacterMovement.canMoveIntoSquare(node.Square, current.Square) && !closed.Contains(node)) {
                 open.Add(node);
             }
         }
@@ -127,27 +124,5 @@ public class Path {
                 node = listNode;
             }
         }
-    }
-
-    private bool canMoveIntoSquare(Square next, Square current) {
-        if(next == null) {
-            return false;
-        }
-
-        Vector2Int delta = next.GridPosition - current.GridPosition;
-        if(delta == Vector2.up) {
-            return !next.SouthWall;
-        }
-        if(delta == Vector2.right) {
-            return !next.WestWall;
-        }
-        if(delta == Vector2.down) {
-            return !next.NorthWall;
-        }
-        if(delta == Vector2Int.left) {
-            return !next.EastWall;
-        }
-
-        return false;
     }
 }
