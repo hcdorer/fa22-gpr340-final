@@ -23,17 +23,21 @@ public abstract class GhostBrain : MonoBehaviour {
     private float phaseTimer = SCATTER_TIMER_START_PHASE_0;
 
     [SerializeField] private Square scatterCorner;
+    protected Square ScatterCorner { get => scatterCorner; }
     [SerializeField] private Square scatterOpposite;
     private bool targetOpposite = false;
 
-    protected Square lastKnownCrossroads;
+    private Square lastKnownCrossroads;
+    protected Square LastKnownCrossroads { get => lastKnownCrossroads; }
     private Square playerSquare { get => FindObjectOfType<PacManInput>().GetComponent<CharacterMovement>().square; }
 
     private bool stuck = false;
     private bool stuckThisFrame = false;
 
     private CharacterMovement movement;
-    protected AIPathfind pathfind;
+    protected CharacterMovement Movement { get => movement; }
+    private AIPathfind pathfind;
+    protected AIPathfind Pathfind { get => pathfind; }
 
     private void Awake() {
         movement = GetComponent<CharacterMovement>();
