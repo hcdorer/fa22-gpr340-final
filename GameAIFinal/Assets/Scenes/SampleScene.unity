@@ -1385,13 +1385,15 @@ GameObject:
   m_Component:
   - component: {fileID: 37666258}
   - component: {fileID: 37666257}
+  - component: {fileID: 37666263}
+  - component: {fileID: 37666262}
   - component: {fileID: 37666259}
   - component: {fileID: 37666256}
   - component: {fileID: 37666260}
   - component: {fileID: 37666261}
   m_Layer: 0
   m_Name: Blinky
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1570,7 +1572,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 37666260}
         m_TargetAssemblyTypeName: GhostBrain, Assembly-CSharp
-        m_MethodName: chooseRandomDirection
+        m_MethodName: getUnstuck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1592,6 +1594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17df8c2e0a170b24586d2336e5036f3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frightenedColor: {r: 0, g: 0, b: 1, a: 1}
   scatterCorner: {fileID: 1992976956}
   scatterOpposite: {fileID: 1008084634}
 --- !u!114 &37666261
@@ -1608,6 +1611,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPoint: {fileID: 1777766073}
   nextPoint: {fileID: 2021898879}
+--- !u!61 &37666262
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37666255}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &37666263
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37666255}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &41580302
 GameObject:
   m_ObjectHideFlags: 0
@@ -49894,17 +49944,19 @@ GameObject:
   m_Component:
   - component: {fileID: 781696756}
   - component: {fileID: 781696755}
+  - component: {fileID: 781696760}
+  - component: {fileID: 781696759}
   - component: {fileID: 781696754}
   - component: {fileID: 781696753}
   - component: {fileID: 781696758}
   - component: {fileID: 781696757}
   m_Layer: 0
   m_Name: Clyde
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &781696753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50012,7 +50064,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 781696758}
         m_TargetAssemblyTypeName: GhostBrain, Assembly-CSharp
-        m_MethodName: chooseRandomDirection
+        m_MethodName: getUnstuck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -50115,10 +50167,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e80bf76d2c3f45438f82e9ff7a7fb8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frightenedColor: {r: 0, g: 0, b: 1, a: 1}
   scatterCorner: {fileID: 1087610609}
   scatterOpposite: {fileID: 913497200}
   pacman: {fileID: 75938765}
   fleeDistance: 8
+--- !u!61 &781696759
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781696751}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &781696760
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781696751}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &782280421
 GameObject:
   m_ObjectHideFlags: 0
@@ -76935,17 +77035,19 @@ GameObject:
   m_Component:
   - component: {fileID: 1218743969}
   - component: {fileID: 1218743968}
+  - component: {fileID: 1218743973}
+  - component: {fileID: 1218743972}
   - component: {fileID: 1218743967}
   - component: {fileID: 1218743966}
   - component: {fileID: 1218743970}
   - component: {fileID: 1218743971}
   m_Layer: 0
   m_Name: Inky
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1218743966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77053,7 +77155,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1218743970}
         m_TargetAssemblyTypeName: GhostBrain, Assembly-CSharp
-        m_MethodName: chooseRandomDirection
+        m_MethodName: getUnstuck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -77142,6 +77244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4ce348bc571804fb84e6945373a927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frightenedColor: {r: 0, g: 0, b: 1, a: 1}
   scatterCorner: {fileID: 1435937080}
   scatterOpposite: {fileID: 1720412248}
   pacman: {fileID: 75938765}
@@ -77161,6 +77264,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPoint: {fileID: 1846899943}
   nextPoint: {fileID: 369390174}
+--- !u!61 &1218743972
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218743964}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &1218743973
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218743964}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1219344137
 GameObject:
   m_ObjectHideFlags: 0
@@ -116927,17 +117077,19 @@ GameObject:
   m_Component:
   - component: {fileID: 1798686387}
   - component: {fileID: 1798686386}
+  - component: {fileID: 1798686391}
+  - component: {fileID: 1798686390}
   - component: {fileID: 1798686385}
   - component: {fileID: 1798686384}
   - component: {fileID: 1798686388}
   - component: {fileID: 1798686389}
   m_Layer: 0
   m_Name: Pinky
-  m_TagString: Untagged
+  m_TagString: Ghost
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1798686384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117045,7 +117197,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1798686388}
         m_TargetAssemblyTypeName: GhostBrain, Assembly-CSharp
-        m_MethodName: chooseRandomDirection
+        m_MethodName: getUnstuck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -117134,6 +117286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e9d446803c2f14ca73c07e0376da7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frightenedColor: {r: 0, g: 0, b: 1, a: 1}
   scatterCorner: {fileID: 1406347740}
   scatterOpposite: {fileID: 1730452543}
   pacman: {fileID: 75938765}
@@ -117151,6 +117304,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPoint: {fileID: 689705365}
   nextPoint: {fileID: 1270079407}
+--- !u!61 &1798686390
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798686382}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!50 &1798686391
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798686382}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1800441025
 GameObject:
   m_ObjectHideFlags: 0

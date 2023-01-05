@@ -14,9 +14,14 @@ public abstract class GhostBrain : MonoBehaviour {
     private const float CHASE_TIMER_START = 20;
     private const float SCATTER_TIMER_START_PHASE_0 = 7;
     private const float SCATTER_TIMER_START_PHASE_4 = 5;
-    
+    private const float FRIGHTENED_TIMER_START = 5;
+
     private int phase = 0;
     private float phaseTimer = SCATTER_TIMER_START_PHASE_0;
+    private float frightenedTimer = FRIGHTENED_TIMER_START;
+
+    private Color defaultColor;
+    [SerializeField] private Color frightenedColor;
 
     [SerializeField] private Square scatterCorner;
     protected Square ScatterCorner { get => scatterCorner; }
@@ -34,24 +39,36 @@ public abstract class GhostBrain : MonoBehaviour {
     protected CharacterMovement Movement { get => movement; }
     private AIPathfind pathfind;
     protected AIPathfind Pathfind { get => pathfind; }
+    private SpriteRenderer sRenderer;
 
     private void Awake() {
         movement = GetComponent<CharacterMovement>();
         pathfind = GetComponent<AIPathfind>();
+        sRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnEnable() {
         foreach(Crossroads crossroads in FindObjectsOfType<Crossroads>()) {
             crossroads.crossroadsReachedEvent += onCrossroadsReached;
         }
+
+        foreach(PowerDot powerDot in FindObjectsOfType<PowerDot>()) {
+            powerDot.powerDotCollectedEvent += onPowerDotCollected;
+        }
     }
 
     private void Start() {
+        defaultColor = sRenderer.color;
+
         setPathFromBehavior(false);
     }
 
     private void Update() {
-        updatePhase();
+        if(frightened) {
+            updateFrightened();
+        } else {
+            updatePhase();
+        }
 
         stuckThisFrame = false;
     }
@@ -59,6 +76,10 @@ public abstract class GhostBrain : MonoBehaviour {
     private void OnDisable() {
         foreach(Crossroads crossroads in FindObjectsOfType<Crossroads>()) {
             crossroads.crossroadsReachedEvent -= onCrossroadsReached;
+        }
+
+        foreach(PowerDot powerDot in FindObjectsOfType<PowerDot>()) {
+            powerDot.powerDotCollectedEvent -= onPowerDotCollected;
         }
     }
 
@@ -96,9 +117,21 @@ public abstract class GhostBrain : MonoBehaviour {
         }
     }
 
+    private void updateFrightened() {
+        frightenedTimer -= Time.deltaTime;
+        if(frightenedTimer <= 0) {
+            frightened = false;
+            sRenderer.color = defaultColor;
+            setupPhase();
+        }
+    }
+
     private void onCrossroadsReached(CrossroadsReachedEventArgs e) {
         lastKnownCrossroads = e.square;
-        setPathFromBehavior(false);
+
+        if(!frightened) {
+            setPathFromBehavior(false);
+        }
     }
 
     private void setPathFromBehavior(bool chasePlayer) {
@@ -140,6 +173,15 @@ public abstract class GhostBrain : MonoBehaviour {
         movement.Direction = nextDirection;
     }
 
+    public void getUnstuck() {
+        if(!frightened) {
+            stuck = true;
+            stuckThisFrame = true;
+        }
+
+        chooseRandomDirection(movement.square, true);
+    }
+
     public void remakePath() {
         if(stuck && !stuckThisFrame) {
             setPathFromBehavior(false);
@@ -152,6 +194,19 @@ public abstract class GhostBrain : MonoBehaviour {
             targetOpposite = !targetOpposite;
         }
         setPathFromBehavior(true);
+    }
+
+    private void onPowerDotCollected() {
+        frightened = true;
+        frightenedTimer = FRIGHTENED_TIMER_START;
+        sRenderer.color = frightenedColor;
+        pathfind.stop();
+    }
+
+    public void changeDirection(Square crossroads) {
+        if(frightened) {
+            chooseRandomDirection(crossroads, false);
+        }
     }
 
     protected abstract Square getChaseTarget();

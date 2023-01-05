@@ -56,4 +56,8 @@ public class AIPathfind : GridAligned {
 
         onTargetUpdated.Invoke(path.last.transform.position);
     }
+
+    public void stop() {
+        path = null;
+    }
 }

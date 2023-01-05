@@ -21,5 +21,9 @@ public class Crossroads : GridAligned {
         if(collision.gameObject.tag == "PacMan") {
             crossroadsReachedEvent?.Invoke(new CrossroadsReachedEventArgs(square));
         }
+
+        if(collision.gameObject.tag == "Ghost") {
+            collision.GetComponent<GhostBrain>().changeDirection(square);
+        }
     }
 }

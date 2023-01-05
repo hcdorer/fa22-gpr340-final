@@ -1,10 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PowerDot : Dot {
+    public delegate void PowerDotCollectedEventHandler();
+    public event PowerDotCollectedEventHandler powerDotCollectedEvent;
+    
     private void OnTriggerEnter2D(Collider2D collision) {
-        deleteDot(collision);
+        if(collision.gameObject.tag == "PacMan") {
+            Destroy(gameObject);
+            powerDotCollectedEvent?.Invoke();
+        }
     }
 }

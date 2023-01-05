@@ -97,30 +97,6 @@ public class CharacterMovement : GridAligned {
 
         return false;
     }
-    
-    public bool canMoveIntoSquare(Vector2Int direction) {
-        Vector2Int nextGridPosition = gridPosition + direction;
-        Square square = Square.getSquareAt(LevelGrid.CellToWorld(new Vector3Int(nextGridPosition.x, nextGridPosition.y, 0)));
-
-        if(square == null) {
-            return false;
-        }
-
-        if(direction == Vector2Int.up) {
-            return !square.SouthWall;
-        }
-        if(direction == Vector2Int.right) {
-            return !square.WestWall;
-        }
-        if(direction == Vector2Int.down) {
-            return !square.NorthWall;
-        }
-        if(direction == Vector2Int.left) {
-            return !square.EastWall;
-        }
-
-        return false;
-    }
 
     public static bool canMoveIntoSquare(Square square, Vector2Int direction) {
         if(square == null) {
