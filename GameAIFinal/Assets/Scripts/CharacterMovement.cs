@@ -16,6 +16,7 @@ public class CharacterMovement : GridAligned {
     public Vector2Int NextDirection { get => nextDirection; }
     private Vector2Int targetGridPosition;
     [SerializeField] private float moveSpeed;
+    private Vector2Int spawnPoint;
 
     public Square square { get => Square.getSquareAt(transform.position); }
 
@@ -25,7 +26,8 @@ public class CharacterMovement : GridAligned {
     public UnityEvent onNextUnreachable;
 
     private void Start() {
-        targetGridPosition = gridPosition + direction;
+        spawnPoint = GridPosition;
+        targetGridPosition = GridPosition + direction;
         setNextTarget();
     }
 
@@ -156,5 +158,11 @@ public class CharacterMovement : GridAligned {
         Square newTarget = possibleMoves[roll];
         Vector2Int delta = newTarget.GridPosition - square.GridPosition;
         direction = delta;
+    }
+
+    public void respawn() {
+        GridPosition = spawnPoint;
+        targetGridPosition = GridPosition + direction;
+        setNextTarget();
     }
 }

@@ -209,5 +209,14 @@ public abstract class GhostBrain : MonoBehaviour {
         }
     }
 
+    public bool respawn() {
+        if(!frightened) {
+            return false;
+        }
+
+        movement.respawn();
+        return true;
+    }
+
     protected abstract Square getChaseTarget();
 }
