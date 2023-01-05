@@ -1410,8 +1410,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90879b67ebb6f649a880efd693c6551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelGrid: {fileID: 456932970}
-  gridPosition: {x: 14, y: 18}
   targetGridPosition: {x: 0, y: 0}
   onTargetReached:
     m_PersistentCalls:
@@ -49969,8 +49967,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90879b67ebb6f649a880efd693c6551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelGrid: {fileID: 456932970}
-  gridPosition: {x: 8, y: 18}
   targetGridPosition: {x: 0, y: 0}
   onTargetReached:
     m_PersistentCalls:
@@ -77060,8 +77056,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90879b67ebb6f649a880efd693c6551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelGrid: {fileID: 456932970}
-  gridPosition: {x: 17, y: 18}
   targetGridPosition: {x: 0, y: 0}
   onTargetReached:
     m_PersistentCalls:
@@ -117102,8 +117096,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90879b67ebb6f649a880efd693c6551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelGrid: {fileID: 456932970}
-  gridPosition: {x: 11, y: 18}
   targetGridPosition: {x: 0, y: 0}
   onTargetReached:
     m_PersistentCalls:
