@@ -8,18 +8,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class GhostBrain : MonoBehaviour {
-    private enum Behavior {
-        CHASE,
-        SCATTER,
-        FRIGHTENED
-    }
-    
+    private bool chase = false;
+    private bool frightened = false;
+
     private const float CHASE_TIMER_START = 20;
     private const float SCATTER_TIMER_START_PHASE_0 = 7;
     private const float SCATTER_TIMER_START_PHASE_4 = 5;
     
     private int phase = 0;
-    private Behavior behavior = Behavior.SCATTER;
     private float phaseTimer = SCATTER_TIMER_START_PHASE_0;
 
     [SerializeField] private Square scatterCorner;
@@ -44,21 +40,18 @@ public abstract class GhostBrain : MonoBehaviour {
         pathfind = GetComponent<AIPathfind>();
     }
 
-    private void Start() {
-        setPathFromBehavior(false);
-    }
-
     private void OnEnable() {
         foreach(Crossroads crossroads in FindObjectsOfType<Crossroads>()) {
             crossroads.crossroadsReachedEvent += onCrossroadsReached;
         }
     }
 
+    private void Start() {
+        setPathFromBehavior(false);
+    }
+
     private void Update() {
-        phaseTimer -= Time.deltaTime;
-        if(phaseTimer <= 0 && phase < 7) {
-            advancePhase();
-        }
+        updatePhase();
 
         stuckThisFrame = false;
     }
@@ -71,20 +64,35 @@ public abstract class GhostBrain : MonoBehaviour {
 
     private void advancePhase() {
         phase++;
+        setupPhase();
+    }
 
+    private void repeatPhase() {
+        phase--;
+        setupPhase();
+    }
+
+    private void setupPhase() {
         if(phase % 2 == 0) {
-            behavior = Behavior.SCATTER;
+            chase = false;
             phaseTimer = phase > 4 ? SCATTER_TIMER_START_PHASE_4 : SCATTER_TIMER_START_PHASE_0;
             targetOpposite = false;
             setPathFromBehavior(false);
         } else {
-            behavior = Behavior.CHASE;
+            chase = true;
             phaseTimer = CHASE_TIMER_START;
             if(lastKnownCrossroads != null) {
                 setPathFromBehavior(false);
             } else {
-                behavior = Behavior.SCATTER;
+                repeatPhase();
             }
+        }
+    }
+
+    private void updatePhase() {
+        phaseTimer -= Time.deltaTime;
+        if(phaseTimer <= 0 && phase < 7) {
+            advancePhase();
         }
     }
 
@@ -94,34 +102,38 @@ public abstract class GhostBrain : MonoBehaviour {
     }
 
     private void setPathFromBehavior(bool chasePlayer) {
-        switch(behavior) {
-            case Behavior.SCATTER:
-                pathfind.setPath(targetOpposite ? scatterOpposite : scatterCorner);
-                break;
-            case Behavior.CHASE:
-                pathfind.setPath(chasePlayer ? playerSquare : getChaseTarget());
-                break;
+        if(chase) {
+            pathfind.setPath(chasePlayer ? playerSquare : getChaseTarget());
+        } else {
+            pathfind.setPath(targetOpposite ? scatterOpposite : scatterCorner);
         }
     }
 
-    protected abstract Square getChaseTarget();
-
-    public void chooseRandomDirection() {
-        stuck = true;
-        stuckThisFrame = true;
-
+    private void chooseRandomDirection(Square square, bool prioritizeCurrentDirection) {
         List<Vector2Int> directions = new List<Vector2Int>() { Vector2Int.up, Vector2Int.right, Vector2Int.down, Vector2Int.left };
-        if(directions.Contains(movement.Direction)) {
-            directions.Remove(movement.Direction);
+        bool validDirection = false;
+        Vector2Int nextDirection = Vector2Int.zero;
+        Vector2Int nextPosition = Vector2Int.zero;
+        Square next;
+
+        if(prioritizeCurrentDirection) {
+            if(directions.Contains(movement.Direction)) {
+                directions.Remove(movement.Direction);
+            }
+
+            nextDirection = movement.Direction;
+            nextPosition = square.GridPosition + nextDirection;
+            next = Square.getSquareAt(movement.LevelGrid.CellToWorld(new Vector3Int(nextPosition.x, nextPosition.y, 0)));
+            validDirection = CharacterMovement.canMoveIntoSquare(next, nextDirection);
         }
-        
-        Vector2Int nextDirection = movement.Direction;
-        bool validDirection = movement.canMoveIntoSquare(nextDirection);
+
         while(!validDirection) {
             int roll = UnityEngine.Random.Range(0, directions.Count - 1);
 
             nextDirection = directions[roll];
-            validDirection = movement.canMoveIntoSquare(nextDirection);
+            nextPosition = square.GridPosition + nextDirection;
+            next = Square.getSquareAt(movement.LevelGrid.CellToWorld(new Vector3Int(nextPosition.x, nextPosition.y, 0)));
+            validDirection = CharacterMovement.canMoveIntoSquare(next, nextDirection);
             directions.Remove(directions[roll]);
         }
 
@@ -136,9 +148,11 @@ public abstract class GhostBrain : MonoBehaviour {
     }
 
     public void updatePath() {
-        if(behavior == Behavior.SCATTER) {
+        if(!chase) {
             targetOpposite = !targetOpposite;
         }
         setPathFromBehavior(true);
     }
+
+    protected abstract Square getChaseTarget();
 }
