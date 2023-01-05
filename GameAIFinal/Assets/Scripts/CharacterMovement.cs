@@ -4,8 +4,16 @@ using UnityEngine;
 using UnityEngine.Events;
 
 public class CharacterMovement : GridAligned {
+    private enum LerpResult {
+        SUCCESS,
+        FAIL,
+        IN_PROGRESS
+    }
+    
     private Vector2Int direction = Vector2Int.right;
-    public Vector2Int Direction { get => direction; set => direction = value; }
+    private Vector2Int nextDirection = Vector2Int.right;
+    public Vector2Int Direction { get => direction; set => nextDirection = value; }
+    public Vector2Int NextDirection { get => nextDirection; }
     private Vector2Int targetGridPosition;
     [SerializeField] private float moveSpeed;
 
@@ -22,12 +30,19 @@ public class CharacterMovement : GridAligned {
     }
 
     private void Update() {
-        if(lerp()) {
-            onTargetReached.Invoke();
-            gridPosition = targetGridPosition;
-            setNextTarget();
-        } else {
-            setNextTarget();
+        LerpResult result = lerp();
+
+        switch(result) {
+            case LerpResult.SUCCESS:
+                onTargetReached.Invoke();
+                gridPosition = targetGridPosition;
+                direction = nextDirection;
+                setNextTarget();
+                break;
+            case LerpResult.FAIL:
+                direction = nextDirection;
+                setNextTarget();
+                break;
         }
     }
 
@@ -47,19 +62,19 @@ public class CharacterMovement : GridAligned {
         onTargetUpdated.Invoke(nextSquare.transform.position);
     }
 
-    private bool lerp() {
+    private LerpResult lerp() {
         Vector3 targetPosition = LevelGrid.CellToWorld(new Vector3Int(targetGridPosition.x, targetGridPosition.y, 0));
 
         if(!canMoveIntoSquare(Square.getSquareAt(targetPosition))) {
-            return false;
+            return LerpResult.FAIL;
         }
 
         transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
         if(transform.position == targetPosition) {
-            return true;
+            return LerpResult.SUCCESS;
         }
 
-        return false;
+        return LerpResult.IN_PROGRESS;
     }
 
     public bool canMoveIntoSquare(Square square) {
