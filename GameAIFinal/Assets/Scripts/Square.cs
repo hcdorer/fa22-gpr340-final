@@ -12,10 +12,10 @@ public class Square : GridAligned {
     public bool SouthWall { get => southWall; }
     public bool WestWall { get => westWall; }
     public bool walledOff { get => (northWall && eastWall && southWall && westWall); }
-    public Square northNeighbor { get => getSquareAt(LevelGrid.CellToWorld(new Vector3Int(gridPosition.x, gridPosition.y + 1, 0))); }
-    public Square eastNeighbor { get => getSquareAt(LevelGrid.CellToWorld(new Vector3Int(gridPosition.x + 1, gridPosition.y, 0))); }
-    public Square southNeighbor { get => getSquareAt(LevelGrid.CellToWorld(new Vector3Int(gridPosition.x, gridPosition.y - 1, 0))); }
-    public Square westNeighbor { get => getSquareAt(LevelGrid.CellToWorld(new Vector3Int(gridPosition.x - 1, gridPosition.y, 0))); }
+    public Square northNeighbor { get => getSquareAt(LevelGrid.CellToWorld(new Vector3Int(GridPosition.x, GridPosition.y + 1, 0))); }
+    public Square eastNeighbor { get => getSquareAt(LevelGrid.CellToWorld(new Vector3Int(GridPosition.x + 1, GridPosition.y, 0))); }
+    public Square southNeighbor { get => getSquareAt(LevelGrid.CellToWorld(new Vector3Int(GridPosition.x, GridPosition.y - 1, 0))); }
+    public Square westNeighbor { get => getSquareAt(LevelGrid.CellToWorld(new Vector3Int(GridPosition.x - 1, GridPosition.y, 0))); }
 
     private void OnValidate() {
         setSprite();
@@ -28,7 +28,7 @@ public class Square : GridAligned {
             return false;
         } else { // we know it's actually a Square
             Square other = (Square)otherObj;
-            return gridPosition == other.gridPosition && northWall == other.northWall && eastWall == other.eastWall && southWall == other.southWall && westWall == other.westWall;
+            return GridPosition == other.GridPosition && northWall == other.northWall && eastWall == other.eastWall && southWall == other.southWall && westWall == other.westWall;
         }
     }
 

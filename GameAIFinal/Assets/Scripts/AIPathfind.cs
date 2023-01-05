@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class AIPathfind : GridAligned {
-    Path path;
-    int pathIndex;
+public class AIPathfind : MonoBehaviour {
+    private Path path;
+    private int pathIndex;
 
     [SerializeField] private Vector2Int targetGridPosition;
 

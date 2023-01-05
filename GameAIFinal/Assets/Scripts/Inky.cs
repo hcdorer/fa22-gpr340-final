@@ -11,7 +11,7 @@ public class Inky : GhostBrain {
         Vector2Int targetPosition = pinky.GridPosition + (pacman.GridPosition - pinky.GridPosition) * 2;
         targetPosition = new Vector2Int(Mathf.Clamp(targetPosition.x, 0, builder.Columns - 1), Mathf.Clamp(targetPosition.y, 0, builder.Rows - 1));
 
-        Square current = Square.getSquareAt(Pathfind.LevelGrid.CellToWorld(new Vector3Int(targetPosition.x, targetPosition.y, 0)));
+        Square current = Square.getSquareAt(Movement.LevelGrid.CellToWorld(new Vector3Int(targetPosition.x, targetPosition.y, 0)));
         while(current.walledOff) {
             foreach(Square neighbor in current.getNeighbors()) {
                 if(neighbor != null) {

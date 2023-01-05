@@ -35,7 +35,7 @@ public class CharacterMovement : GridAligned {
         switch(result) {
             case LerpResult.SUCCESS:
                 onTargetReached.Invoke();
-                gridPosition = targetGridPosition;
+                GridPosition = targetGridPosition;
                 direction = nextDirection;
                 setNextTarget();
                 break;
@@ -47,7 +47,7 @@ public class CharacterMovement : GridAligned {
     }
 
     private void setNextTarget() {
-        Vector2Int nextTarget = gridPosition + direction;
+        Vector2Int nextTarget = GridPosition + direction;
         Square nextSquare = Square.getSquareAt(LevelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0)));
         if(nextSquare == null) {
             return;

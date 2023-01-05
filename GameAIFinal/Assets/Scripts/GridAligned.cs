@@ -6,7 +6,7 @@ using UnityEngine;
 public class GridAligned : MonoBehaviour {
     [SerializeField] private Grid levelGrid; // should get this from a GameManager or something
     public Grid LevelGrid { get => levelGrid; set => levelGrid = value; }
-    [SerializeField] protected Vector2Int gridPosition;
+    [SerializeField] private Vector2Int gridPosition;
     public Vector2Int GridPosition { get => gridPosition; set => setGridPosition(value); }
 
     private void OnValidate() {
