@@ -11,6 +11,6 @@ public class Teleporter : GridAligned {
         }
 
         CharacterMovement pacman = collision.GetComponent<CharacterMovement>();
-        pacman.GridPosition = exit.GridPosition;
+        pacman.teleport(exit.GridPosition);
     }
 }

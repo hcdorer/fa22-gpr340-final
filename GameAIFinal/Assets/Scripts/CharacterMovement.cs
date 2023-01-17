@@ -160,9 +160,13 @@ public class CharacterMovement : GridAligned {
         direction = delta;
     }
 
-    public void respawn() {
-        GridPosition = spawnPoint;
+    public void teleport(Vector2Int gridPosition) {
+        GridPosition = gridPosition;
         targetGridPosition = GridPosition + direction;
         setNextTarget();
+    }
+
+    public void respawn() {
+        teleport(spawnPoint);
     }
 }
