@@ -5,9 +5,11 @@ using UnityEngine;
 
 public class PacManInput : MonoBehaviour {
     private CharacterMovement movement;
+    private PacManStats stats;
 
     private void Awake() {
         movement = GetComponent<CharacterMovement>();
+        stats = GetComponent<PacManStats>();
     }
 
     private void Update() {
@@ -16,6 +18,10 @@ public class PacManInput : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.gameObject.tag == "Ghost") {
+            if(stats.IFrames) {
+                return;
+            }
+
             GhostBrain ghost = collision.GetComponent<GhostBrain>();
             if(!ghost.respawn()) {
                 movement.respawn();
