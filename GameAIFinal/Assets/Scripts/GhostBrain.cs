@@ -35,6 +35,8 @@ public abstract class GhostBrain : MonoBehaviour {
     private bool stuck = false;
     private bool stuckThisFrame = false;
 
+    private bool respawnedThisFrame = false;
+
     private CharacterMovement movement;
     protected CharacterMovement Movement { get => movement; }
     private AIPathfind pathfind;
@@ -71,6 +73,7 @@ public abstract class GhostBrain : MonoBehaviour {
         }
 
         stuckThisFrame = false;
+        respawnedThisFrame = false;
     }
 
     private void OnDisable() {
@@ -210,11 +213,16 @@ public abstract class GhostBrain : MonoBehaviour {
     }
 
     public bool respawn() {
+        if(respawnedThisFrame) {
+            return true;
+        }
+        
         if(!frightened) {
             return false;
         }
 
         movement.respawn();
+        respawnedThisFrame = true;
         return true;
     }
 
