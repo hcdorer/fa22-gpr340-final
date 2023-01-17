@@ -4680,7 +4680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75481987ed01e1944966939522ef8871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 5
   onScoreUpdate:
     m_PersistentCalls:
       m_Calls:
@@ -27748,7 +27747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc93c8aee332924bbbd97fe04cd372a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  squarePrefab: {fileID: 0}
+  squarePrefab: {fileID: 8091558749369273198, guid: d777ed6473dd0c04ba7a621a902d1676, type: 3}
   startPosition: {x: 0, y: 0}
   rows: 29
   columns: 26
