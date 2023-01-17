@@ -37,6 +37,8 @@ public abstract class GhostBrain : MonoBehaviour {
 
     private bool respawnedThisFrame = false;
 
+    private const int POINT_VALUE = 1000;
+
     private CharacterMovement movement;
     protected CharacterMovement Movement { get => movement; }
     private AIPathfind pathfind;
@@ -212,7 +214,7 @@ public abstract class GhostBrain : MonoBehaviour {
         }
     }
 
-    public bool respawn() {
+    public bool respawn(PacManStats pacMan) {
         if(respawnedThisFrame) {
             return true;
         }
@@ -223,6 +225,9 @@ public abstract class GhostBrain : MonoBehaviour {
 
         movement.respawn();
         respawnedThisFrame = true;
+
+        pacMan.Score += POINT_VALUE;
+        
         return true;
     }
 

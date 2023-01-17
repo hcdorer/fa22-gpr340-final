@@ -23,7 +23,7 @@ public class PacManInput : MonoBehaviour {
             }
 
             GhostBrain ghost = collision.GetComponent<GhostBrain>();
-            if(!ghost.respawn()) {
+            if(!ghost.respawn(stats)) {
                 movement.respawn();
             }
         }

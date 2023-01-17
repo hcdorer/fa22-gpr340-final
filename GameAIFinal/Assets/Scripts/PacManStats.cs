@@ -40,7 +40,7 @@ public class PacManStats : MonoBehaviour {
             }
 
             GhostBrain ghost = collision.GetComponent<GhostBrain>();
-            if(!ghost.respawn()) {
+            if(!ghost.respawn(this)) {
                 lives--;
                 onLivesUpdate.Invoke(lives);
 
