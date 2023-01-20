@@ -35,7 +35,7 @@ public class DotPlacer : MonoBehaviour {
                 Vector2Int newPos = new Vector2Int(square.GridPosition.x, square.GridPosition.y);
 
                 if(powerDotGridPositions.Contains(newPos)) {
-                    dot = Instantiate(powerDotPrefab, dotHolder.transform).GetComponent<PowerDot>();
+                    dot = Instantiate(powerDotPrefab, dotHolder.transform).GetComponent<Dot>();
                     dot.name = "PowerDot_" + square.GridPosition.x + "_" + square.GridPosition.y;
                 } else {
                     dot = Instantiate(dotPrefab, dotHolder.transform).GetComponent<Dot>();

@@ -2112,6 +2112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 3, y: 0}
+  pointValue: 100
 --- !u!58 &46778740
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2752,6 +2753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 1, y: 24}
+  pointValue: 100
 --- !u!58 &53098389
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2999,6 +3001,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 2, y: 28}
+  pointValue: 100
 --- !u!58 &57402818
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3246,6 +3249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 16, y: 9}
+  pointValue: 100
 --- !u!58 &58564974
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3755,6 +3759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 28}
+  pointValue: 100
 --- !u!58 &64617318
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4002,6 +4007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 23, y: 24}
+  pointValue: 100
 --- !u!58 &67542860
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4118,6 +4124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 9}
+  pointValue: 100
 --- !u!58 &68692337
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4234,6 +4241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 6, y: 15}
+  pointValue: 100
 --- !u!58 &71340845
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4758,6 +4766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 8}
+  pointValue: 100
 --- !u!58 &75956409
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5078,6 +5087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 15, y: 28}
+  pointValue: 100
 --- !u!58 &80688124
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5194,6 +5204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 9, y: 21}
+  pointValue: 100
 --- !u!58 &83323614
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6096,6 +6107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 1, y: 15}
+  pointValue: 100
 --- !u!58 &98922704
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6736,6 +6748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 27}
+  pointValue: 100
 --- !u!58 &114114644
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7376,6 +7389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 25}
+  pointValue: 100
 --- !u!58 &126523272
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8482,6 +8496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 2}
+  pointValue: 100
 --- !u!58 &138072291
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9253,6 +9268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 28}
+  pointValue: 100
 --- !u!58 &149813411
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9573,6 +9589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 28}
+  pointValue: 100
 --- !u!58 &155856823
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9689,6 +9706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 10, y: 6}
+  pointValue: 100
 --- !u!58 &156170242
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9936,6 +9954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 18}
+  pointValue: 100
 --- !u!58 &162842650
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10314,6 +10333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 9}
+  pointValue: 100
 --- !u!58 &167823290
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10430,6 +10450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 24, y: 24}
+  pointValue: 100
 --- !u!58 &169247256
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10640,6 +10661,7 @@ GameObject:
   - component: {fileID: 173438944}
   - component: {fileID: 173438947}
   - component: {fileID: 173438946}
+  - component: {fileID: 173438948}
   - component: {fileID: 173438945}
   m_Layer: 0
   m_Name: PowerDot_25_26
@@ -10675,8 +10697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ab842209d2d504f9ac4b08c2e4d453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelGrid: {fileID: 456932970}
-  gridPosition: {x: 25, y: 26}
 --- !u!58 &173438946
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10745,6 +10765,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &173438948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173438943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb83cfb26a278a45a3c3106d4a650b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelGrid: {fileID: 0}
+  gridPosition: {x: 25, y: 26}
+  pointValue: 500
 --- !u!1 &175751626
 GameObject:
   m_ObjectHideFlags: 0
@@ -10924,6 +10959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 3, y: 24}
+  pointValue: 100
 --- !u!58 &176176740
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11040,6 +11076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 14}
+  pointValue: 100
 --- !u!58 &179998599
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11287,6 +11324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 3, y: 15}
+  pointValue: 100
 --- !u!58 &187922346
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11403,6 +11441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 4}
+  pointValue: 100
 --- !u!58 &188084388
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11519,6 +11558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 8}
+  pointValue: 100
 --- !u!58 &193019659
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12421,6 +12461,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 11}
+  pointValue: 100
 --- !u!58 &198734447
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12537,6 +12578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 9}
+  pointValue: 100
 --- !u!58 &202990502
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13774,6 +13816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 19, y: 0}
+  pointValue: 100
 --- !u!58 &216644806
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14021,6 +14064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 4}
+  pointValue: 100
 --- !u!58 &221040698
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14137,6 +14181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 8}
+  pointValue: 100
 --- !u!58 &221526662
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14253,6 +14298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 17}
+  pointValue: 100
 --- !u!58 &224662614
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14500,6 +14546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 4}
+  pointValue: 100
 --- !u!58 &226949599
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14878,6 +14925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 24}
+  pointValue: 100
 --- !u!58 &231633747
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15853,6 +15901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 13, y: 6}
+  pointValue: 100
 --- !u!58 &253894565
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15969,6 +16018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 6}
+  pointValue: 100
 --- !u!58 &254234801
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -16398,6 +16448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 13}
+  pointValue: 100
 --- !u!58 &259392902
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -16907,6 +16958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 21, y: 9}
+  pointValue: 100
 --- !u!58 &267774072
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17358,6 +17410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 8}
+  pointValue: 100
 --- !u!58 &278476245
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17830,6 +17883,7 @@ GameObject:
   - component: {fileID: 281959393}
   - component: {fileID: 281959396}
   - component: {fileID: 281959395}
+  - component: {fileID: 281959397}
   - component: {fileID: 281959394}
   m_Layer: 0
   m_Name: PowerDot_0_26
@@ -17865,8 +17919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ab842209d2d504f9ac4b08c2e4d453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelGrid: {fileID: 456932970}
-  gridPosition: {x: 0, y: 26}
 --- !u!58 &281959395
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17935,6 +17987,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &281959397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281959392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb83cfb26a278a45a3c3106d4a650b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelGrid: {fileID: 0}
+  gridPosition: {x: 0, y: 26}
+  pointValue: 500
 --- !u!1 &283750108
 GameObject:
   m_ObjectHideFlags: 0
@@ -18245,6 +18312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 10, y: 24}
+  pointValue: 100
 --- !u!58 &284072691
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18492,6 +18560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 23}
+  pointValue: 100
 --- !u!58 &288143130
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18739,6 +18808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 3, y: 28}
+  pointValue: 100
 --- !u!58 &290450013
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18855,6 +18925,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 4, y: 21}
+  pointValue: 100
 --- !u!58 &291667904
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18971,6 +19042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 23}
+  pointValue: 100
 --- !u!58 &293739124
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19553,6 +19625,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 6}
+  pointValue: 100
 --- !u!58 &306161041
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19800,6 +19873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 12, y: 0}
+  pointValue: 100
 --- !u!58 &307566746
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20309,6 +20383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 0}
+  pointValue: 100
 --- !u!58 &321719927
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20949,6 +21024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 16, y: 24}
+  pointValue: 100
 --- !u!58 &331308631
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -21196,6 +21272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 19}
+  pointValue: 100
 --- !u!58 &334298104
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -21443,6 +21520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 24, y: 21}
+  pointValue: 100
 --- !u!58 &338155206
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -22895,6 +22973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 9, y: 28}
+  pointValue: 100
 --- !u!58 &384490574
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -23404,6 +23483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 16}
+  pointValue: 100
 --- !u!58 &387141327
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -23724,6 +23804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 23}
+  pointValue: 100
 --- !u!58 &390281602
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -24175,6 +24256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 7}
+  pointValue: 100
 --- !u!58 &395592866
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -24946,6 +25028,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 13}
+  pointValue: 100
 --- !u!58 &408261184
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25193,6 +25276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 5}
+  pointValue: 100
 --- !u!58 &422512947
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25309,6 +25393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 26}
+  pointValue: 100
 --- !u!58 &426468943
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25425,6 +25510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 9}
+  pointValue: 100
 --- !u!58 &427870699
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25541,6 +25627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 13}
+  pointValue: 100
 --- !u!58 &430019174
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25657,6 +25744,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 21, y: 15}
+  pointValue: 100
 --- !u!58 &431130686
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25773,6 +25861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 12}
+  pointValue: 100
 --- !u!58 &438281872
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -26952,6 +27041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 16}
+  pointValue: 100
 --- !u!58 &449408927
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -27068,6 +27158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 3}
+  pointValue: 100
 --- !u!58 &449559492
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -27184,6 +27275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 15}
+  pointValue: 100
 --- !u!58 &450905868
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -27431,6 +27523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 20}
+  pointValue: 100
 --- !u!58 &454315264
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -27547,6 +27640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 18}
+  pointValue: 100
 --- !u!58 &454781764
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -28878,6 +28972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 21, y: 28}
+  pointValue: 100
 --- !u!58 &464132282
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -29256,6 +29351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 18}
+  pointValue: 100
 --- !u!58 &468793782
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -29896,6 +29992,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 23}
+  pointValue: 100
 --- !u!58 &482103651
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30012,6 +30109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 21}
+  pointValue: 100
 --- !u!58 &489652989
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30128,6 +30226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 10}
+  pointValue: 100
 --- !u!58 &489720314
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30244,6 +30343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 11}
+  pointValue: 100
 --- !u!58 &495959866
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30491,6 +30591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 2}
+  pointValue: 100
 --- !u!58 &498521502
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -31335,6 +31436,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 23, y: 5}
+  pointValue: 100
 --- !u!58 &510263684
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -31713,6 +31815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 22}
+  pointValue: 100
 --- !u!58 &512714714
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -32222,6 +32325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 7, y: 15}
+  pointValue: 100
 --- !u!58 &518348571
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -32815,6 +32919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 24, y: 9}
+  pointValue: 100
 --- !u!58 &521031427
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -32931,6 +33036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 12}
+  pointValue: 100
 --- !u!58 &524906836
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -34132,6 +34238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 10, y: 12}
+  pointValue: 100
 --- !u!58 &542228056
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -34918,6 +35025,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 22}
+  pointValue: 100
 --- !u!58 &551687402
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -35369,6 +35477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 21}
+  pointValue: 100
 --- !u!58 &556932685
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -36533,6 +36642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 28}
+  pointValue: 100
 --- !u!58 &577252145
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -37270,6 +37380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 18}
+  pointValue: 100
 --- !u!58 &591428459
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -37386,6 +37497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 21, y: 0}
+  pointValue: 100
 --- !u!58 &594764199
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -37764,6 +37876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 9, y: 18}
+  pointValue: 100
 --- !u!58 &602405287
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -38011,6 +38124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 10, y: 18}
+  pointValue: 100
 --- !u!58 &605231508
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -38127,6 +38241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 4, y: 28}
+  pointValue: 100
 --- !u!58 &606239160
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -38505,6 +38620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 7, y: 0}
+  pointValue: 100
 --- !u!58 &614070006
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -39218,6 +39334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 3}
+  pointValue: 100
 --- !u!58 &627547977
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -39596,6 +39713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 10, y: 3}
+  pointValue: 100
 --- !u!58 &631446547
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -39712,6 +39830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 10, y: 9}
+  pointValue: 100
 --- !u!58 &634743955
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -40256,6 +40375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 4, y: 24}
+  pointValue: 100
 --- !u!58 &643112989
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -41095,6 +41215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 15, y: 3}
+  pointValue: 100
 --- !u!58 &651262228
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -41211,6 +41332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 13, y: 18}
+  pointValue: 100
 --- !u!58 &651705377
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -41662,6 +41784,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 28}
+  pointValue: 100
 --- !u!58 &654455304
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -42171,6 +42294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 1, y: 28}
+  pointValue: 100
 --- !u!58 &664056249
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -42287,6 +42411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 23, y: 6}
+  pointValue: 100
 --- !u!58 &667268217
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -42927,6 +43052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 2, y: 4}
+  pointValue: 100
 --- !u!58 &672303589
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -43305,6 +43431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 2, y: 24}
+  pointValue: 100
 --- !u!58 &675724192
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -43683,6 +43810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 7}
+  pointValue: 100
 --- !u!58 &681999352
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -44538,6 +44666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 9, y: 12}
+  pointValue: 100
 --- !u!58 &691946252
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -45251,6 +45380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 13, y: 12}
+  pointValue: 100
 --- !u!58 &700570213
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -45498,6 +45628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 2, y: 0}
+  pointValue: 100
 --- !u!58 &701502491
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -46022,6 +46153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 9}
+  pointValue: 100
 --- !u!58 &705380515
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -46662,6 +46794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 24, y: 3}
+  pointValue: 100
 --- !u!58 &718979548
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -47433,6 +47566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 9, y: 24}
+  pointValue: 100
 --- !u!58 &735850601
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -48015,6 +48149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 16}
+  pointValue: 100
 --- !u!58 &746748148
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -48262,6 +48397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 17}
+  pointValue: 100
 --- !u!58 &752570893
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -49572,6 +49708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 18}
+  pointValue: 100
 --- !u!58 &769604360
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -49819,6 +49956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 19, y: 9}
+  pointValue: 100
 --- !u!58 &770976346
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -50815,6 +50953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 18, y: 28}
+  pointValue: 100
 --- !u!58 &784359272
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -50931,6 +51070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 3}
+  pointValue: 100
 --- !u!58 &784837137
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -51178,6 +51318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 24}
+  pointValue: 100
 --- !u!58 &788559920
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -51556,6 +51697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 22}
+  pointValue: 100
 --- !u!58 &793959313
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -51672,6 +51814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 23}
+  pointValue: 100
 --- !u!58 &796195110
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -52050,6 +52193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 28}
+  pointValue: 100
 --- !u!58 &801253015
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -52428,6 +52572,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 26}
+  pointValue: 100
 --- !u!58 &805472264
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -52806,6 +52951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 22, y: 3}
+  pointValue: 100
 --- !u!58 &813097711
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -53184,6 +53330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 12}
+  pointValue: 100
 --- !u!58 &823915390
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -53431,6 +53578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 9, y: 0}
+  pointValue: 100
 --- !u!58 &826367226
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -53547,6 +53695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 3}
+  pointValue: 100
 --- !u!58 &826730711
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -54449,6 +54598,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 4, y: 0}
+  pointValue: 100
 --- !u!58 &840939643
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -54769,6 +54919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 18}
+  pointValue: 100
 --- !u!58 &847001474
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -54885,6 +55036,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 3, y: 21}
+  pointValue: 100
 --- !u!58 &847544574
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -55598,6 +55750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 19, y: 28}
+  pointValue: 100
 --- !u!58 &860439225
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -56369,6 +56522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 2, y: 15}
+  pointValue: 100
 --- !u!58 &869817629
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -56616,6 +56770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 27}
+  pointValue: 100
 --- !u!58 &870251183
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -57125,6 +57280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 15}
+  pointValue: 100
 --- !u!58 &884341356
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -57241,6 +57397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 13}
+  pointValue: 100
 --- !u!58 &884956026
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -58143,6 +58300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 14}
+  pointValue: 100
 --- !u!58 &905723108
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -58856,6 +59014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 2, y: 21}
+  pointValue: 100
 --- !u!58 &913067371
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -60151,6 +60310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 16, y: 12}
+  pointValue: 100
 --- !u!58 &924696007
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -60267,6 +60427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 0}
+  pointValue: 100
 --- !u!58 &927413819
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -60645,6 +60806,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 18, y: 15}
+  pointValue: 100
 --- !u!58 &934259946
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -61641,6 +61803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 23, y: 28}
+  pointValue: 100
 --- !u!58 &945025882
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -61972,6 +62135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 2}
+  pointValue: 100
 --- !u!58 &954772443
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -62481,6 +62645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 22}
+  pointValue: 100
 --- !u!58 &965121628
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -62874,6 +63039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 10, y: 28}
+  pointValue: 100
 --- !u!58 &972213613
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -62990,6 +63156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 2, y: 6}
+  pointValue: 100
 --- !u!58 &972866198
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -63383,6 +63550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 24}
+  pointValue: 100
 --- !u!58 &979843196
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -63892,6 +64060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 15}
+  pointValue: 100
 --- !u!58 &987253908
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -64270,6 +64439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 27}
+  pointValue: 100
 --- !u!58 &992005241
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -64779,6 +64949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 24}
+  pointValue: 100
 --- !u!58 &999734739
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -65026,6 +65197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 0}
+  pointValue: 100
 --- !u!58 &1001201351
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -65142,6 +65314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 25}
+  pointValue: 100
 --- !u!58 &1002170861
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -66248,6 +66421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 4, y: 9}
+  pointValue: 100
 --- !u!58 &1020208145
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -66495,6 +66669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 7}
+  pointValue: 100
 --- !u!58 &1020792581
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -66742,6 +66917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 1, y: 0}
+  pointValue: 100
 --- !u!58 &1024032226
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -67120,6 +67296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 0}
+  pointValue: 100
 --- !u!58 &1028217242
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -67760,6 +67937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 15, y: 21}
+  pointValue: 100
 --- !u!58 &1041942298
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -68007,6 +68185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 10}
+  pointValue: 100
 --- !u!58 &1042301169
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -68385,6 +68564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 8}
+  pointValue: 100
 --- !u!58 &1050289713
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -68501,6 +68681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 23, y: 15}
+  pointValue: 100
 --- !u!58 &1053976311
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -69010,6 +69191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 20}
+  pointValue: 100
 --- !u!58 &1060986792
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -69781,6 +69963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 12, y: 18}
+  pointValue: 100
 --- !u!58 &1080428065
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -70757,6 +70940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 22, y: 9}
+  pointValue: 100
 --- !u!58 &1096945694
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -71870,6 +72054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 3}
+  pointValue: 100
 --- !u!58 &1114370994
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -72117,6 +72302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 12}
+  pointValue: 100
 --- !u!58 &1118017655
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -72233,6 +72419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 12}
+  pointValue: 100
 --- !u!58 &1118080680
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -72611,6 +72798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 18, y: 9}
+  pointValue: 100
 --- !u!58 &1130484020
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -73644,6 +73832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 21}
+  pointValue: 100
 --- !u!58 &1143522630
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -73760,6 +73949,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 14}
+  pointValue: 100
 --- !u!58 &1144592975
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -73876,6 +74066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 27}
+  pointValue: 100
 --- !u!58 &1148823770
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -73992,6 +74183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 22}
+  pointValue: 100
 --- !u!58 &1150378480
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -75942,6 +76134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 11}
+  pointValue: 100
 --- !u!58 &1180392528
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -76058,6 +76251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 19, y: 15}
+  pointValue: 100
 --- !u!58 &1183130149
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -76174,6 +76368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 6, y: 9}
+  pointValue: 100
 --- !u!58 &1186741699
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -76421,6 +76616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 6}
+  pointValue: 100
 --- !u!58 &1198074611
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -77061,6 +77257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 15, y: 12}
+  pointValue: 100
 --- !u!58 &1206671416
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -77177,6 +77374,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 26}
+  pointValue: 100
 --- !u!58 &1208970286
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -77650,6 +77848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 0}
+  pointValue: 100
 --- !u!58 &1219344140
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -78028,6 +78227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 25}
+  pointValue: 100
 --- !u!58 &1228217339
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -78537,6 +78737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 23, y: 3}
+  pointValue: 100
 --- !u!58 &1233481274
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -78653,6 +78854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 21}
+  pointValue: 100
 --- !u!58 &1233596867
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -79628,6 +79830,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 3}
+  pointValue: 100
 --- !u!58 &1243058553
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -79875,6 +80078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 7, y: 28}
+  pointValue: 100
 --- !u!58 &1246638548
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -79991,6 +80195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 7}
+  pointValue: 100
 --- !u!58 &1246813091
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -81024,6 +81229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 22, y: 24}
+  pointValue: 100
 --- !u!58 &1268228821
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -81428,6 +81634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 2, y: 3}
+  pointValue: 100
 --- !u!58 &1272404158
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -81544,6 +81751,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 0}
+  pointValue: 100
 --- !u!58 &1272915447
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -81660,6 +81868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 19, y: 24}
+  pointValue: 100
 --- !u!58 &1274798618
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -82824,6 +83033,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 21, y: 24}
+  pointValue: 100
 --- !u!58 &1289148429
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -82940,6 +83150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 9, y: 3}
+  pointValue: 100
 --- !u!58 &1289230896
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -83056,6 +83267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 0}
+  pointValue: 100
 --- !u!58 &1290818737
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -83528,6 +83740,7 @@ GameObject:
   - component: {fileID: 1305566472}
   - component: {fileID: 1305566475}
   - component: {fileID: 1305566474}
+  - component: {fileID: 1305566476}
   - component: {fileID: 1305566473}
   m_Layer: 0
   m_Name: PowerDot_0_6
@@ -83563,8 +83776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ab842209d2d504f9ac4b08c2e4d453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelGrid: {fileID: 456932970}
-  gridPosition: {x: 0, y: 6}
 --- !u!58 &1305566474
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -83633,6 +83844,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1305566476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305566471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb83cfb26a278a45a3c3106d4a650b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelGrid: {fileID: 0}
+  gridPosition: {x: 0, y: 6}
+  pointValue: 500
 --- !u!1 &1307491970
 GameObject:
   m_ObjectHideFlags: 0
@@ -83681,6 +83907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 22}
+  pointValue: 100
 --- !u!58 &1307491973
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -84059,6 +84286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 5}
+  pointValue: 100
 --- !u!58 &1311711449
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -84175,6 +84403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 6}
+  pointValue: 100
 --- !u!58 &1313510726
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -84553,6 +84782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 21}
+  pointValue: 100
 --- !u!58 &1320935969
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -85790,6 +86020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 9}
+  pointValue: 100
 --- !u!58 &1344978727
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -86430,6 +86661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 24}
+  pointValue: 100
 --- !u!58 &1354961034
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -86808,6 +87040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 6, y: 6}
+  pointValue: 100
 --- !u!58 &1360967817
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -87055,6 +87288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 25}
+  pointValue: 100
 --- !u!58 &1366487932
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -87957,6 +88191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 1}
+  pointValue: 100
 --- !u!58 &1376847765
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -88073,6 +88308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 23}
+  pointValue: 100
 --- !u!58 &1379801160
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -88320,6 +88556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 16, y: 21}
+  pointValue: 100
 --- !u!58 &1384105091
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -88436,6 +88673,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 6}
+  pointValue: 100
 --- !u!58 &1392636987
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -88683,6 +88921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 7}
+  pointValue: 100
 --- !u!58 &1400785629
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -89323,6 +89562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 4, y: 3}
+  pointValue: 100
 --- !u!58 &1408378524
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -89774,6 +90014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 13, y: 24}
+  pointValue: 100
 --- !u!58 &1411318049
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -90152,6 +90393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 21}
+  pointValue: 100
 --- !u!58 &1418071659
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -91840,6 +92082,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 9, y: 6}
+  pointValue: 100
 --- !u!58 &1436136480
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -92087,6 +92330,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 16, y: 0}
+  pointValue: 100
 --- !u!58 &1437692814
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -92203,6 +92447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 23, y: 21}
+  pointValue: 100
 --- !u!58 &1437872342
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -92450,6 +92695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 9}
+  pointValue: 100
 --- !u!58 &1440893063
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -92566,6 +92812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 1, y: 6}
+  pointValue: 100
 --- !u!58 &1441643774
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -93075,6 +93322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 6, y: 28}
+  pointValue: 100
 --- !u!58 &1450838930
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -93322,6 +93570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 3, y: 9}
+  pointValue: 100
 --- !u!58 &1458181982
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -93438,6 +93687,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 3}
+  pointValue: 100
 --- !u!58 &1460034104
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -93685,6 +93935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 22, y: 0}
+  pointValue: 100
 --- !u!58 &1461540223
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -94063,6 +94314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 9}
+  pointValue: 100
 --- !u!58 &1465594277
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -95227,6 +95479,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 18, y: 24}
+  pointValue: 100
 --- !u!58 &1492192727
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -95416,6 +95669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 12}
+  pointValue: 100
 --- !u!58 &1497930149
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -95663,6 +95917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 7}
+  pointValue: 100
 --- !u!58 &1502108366
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -96114,6 +96369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 10}
+  pointValue: 100
 --- !u!58 &1513072554
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -96361,6 +96617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 1, y: 21}
+  pointValue: 100
 --- !u!58 &1513753919
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -97692,6 +97949,7 @@ GameObject:
   - component: {fileID: 1528551847}
   - component: {fileID: 1528551850}
   - component: {fileID: 1528551849}
+  - component: {fileID: 1528551851}
   - component: {fileID: 1528551848}
   m_Layer: 0
   m_Name: PowerDot_25_6
@@ -97727,8 +97985,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ab842209d2d504f9ac4b08c2e4d453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelGrid: {fileID: 456932970}
-  gridPosition: {x: 25, y: 6}
 --- !u!58 &1528551849
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -97797,6 +98053,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1528551851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528551846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb83cfb26a278a45a3c3106d4a650b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelGrid: {fileID: 0}
+  gridPosition: {x: 25, y: 6}
+  pointValue: 500
 --- !u!1 &1532029019
 GameObject:
   m_ObjectHideFlags: 0
@@ -98238,6 +98509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 12, y: 12}
+  pointValue: 100
 --- !u!58 &1539491898
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -98616,6 +98888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 21, y: 3}
+  pointValue: 100
 --- !u!58 &1544286729
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -98732,6 +99005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 10, y: 21}
+  pointValue: 100
 --- !u!58 &1544380244
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -101337,6 +101611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 24, y: 6}
+  pointValue: 100
 --- !u!58 &1580556149
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -102370,6 +102645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 20}
+  pointValue: 100
 --- !u!58 &1597812232
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -102617,6 +102893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 3}
+  pointValue: 100
 --- !u!58 &1600936557
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -102733,6 +103010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 23, y: 0}
+  pointValue: 100
 --- !u!58 &1602939292
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -102849,6 +103127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 13, y: 0}
+  pointValue: 100
 --- !u!58 &1604073727
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -103169,6 +103448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 7, y: 6}
+  pointValue: 100
 --- !u!58 &1615894656
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -103285,6 +103565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 15, y: 9}
+  pointValue: 100
 --- !u!58 &1616208809
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -104187,6 +104468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 15, y: 0}
+  pointValue: 100
 --- !u!58 &1628483237
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -104303,6 +104585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 16, y: 18}
+  pointValue: 100
 --- !u!58 &1629096283
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -105074,6 +105357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 25}
+  pointValue: 100
 --- !u!58 &1638404680
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -105190,6 +105474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 22, y: 28}
+  pointValue: 100
 --- !u!58 &1639750315
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -106558,6 +106843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 15}
+  pointValue: 100
 --- !u!58 &1659520049
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -107329,6 +107615,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 19}
+  pointValue: 100
 --- !u!58 &1666161195
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -107445,6 +107732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 3, y: 3}
+  pointValue: 100
 --- !u!58 &1666752043
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -107692,6 +107980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 11}
+  pointValue: 100
 --- !u!58 &1666878907
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -108070,6 +108359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 7, y: 9}
+  pointValue: 100
 --- !u!58 &1677503232
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -108710,6 +109000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 19}
+  pointValue: 100
 --- !u!58 &1684182011
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -108957,6 +109248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 22, y: 21}
+  pointValue: 100
 --- !u!58 &1684407177
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -109728,6 +110020,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 28}
+  pointValue: 100
 --- !u!58 &1695236969
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -110761,6 +111054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 24}
+  pointValue: 100
 --- !u!58 &1707127677
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -111532,6 +111826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 21}
+  pointValue: 100
 --- !u!58 &1715669718
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -111648,6 +111943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 14}
+  pointValue: 100
 --- !u!58 &1716386998
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -113074,6 +113370,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 16, y: 3}
+  pointValue: 100
 --- !u!58 &1739226494
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -113918,6 +114215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 17}
+  pointValue: 100
 --- !u!58 &1751302431
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -114165,6 +114463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 15}
+  pointValue: 100
 --- !u!58 &1752447312
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -115344,6 +115643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 1}
+  pointValue: 100
 --- !u!58 &1765821551
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -115984,6 +116284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 2, y: 5}
+  pointValue: 100
 --- !u!58 &1773242070
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -116446,6 +116747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 28}
+  pointValue: 100
 --- !u!58 &1782511756
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -117290,6 +117592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 19}
+  pointValue: 100
 --- !u!58 &1797230223
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -117819,6 +118122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 1}
+  pointValue: 100
 --- !u!58 &1800790472
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -118197,6 +118501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 2}
+  pointValue: 100
 --- !u!58 &1802113410
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -118837,6 +119142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 24, y: 15}
+  pointValue: 100
 --- !u!58 &1812933729
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -119346,6 +119652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 27}
+  pointValue: 100
 --- !u!58 &1825655676
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -120059,6 +120366,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 17, y: 5}
+  pointValue: 100
 --- !u!58 &1833428400
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -120306,6 +120614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 4, y: 15}
+  pointValue: 100
 --- !u!58 &1834991823
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -120553,6 +120862,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 0, y: 24}
+  pointValue: 100
 --- !u!58 &1843518040
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -121015,6 +121325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 10, y: 0}
+  pointValue: 100
 --- !u!58 &1849716006
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -121131,6 +121442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 8}
+  pointValue: 100
 --- !u!58 &1850522787
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -121247,6 +121559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 12, y: 6}
+  pointValue: 100
 --- !u!58 &1851411330
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -122557,6 +122870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 15, y: 6}
+  pointValue: 100
 --- !u!58 &1867918444
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -123197,6 +123511,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 9, y: 9}
+  pointValue: 100
 --- !u!58 &1876370558
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -123444,6 +123759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 1, y: 3}
+  pointValue: 100
 --- !u!58 &1877129159
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -123771,6 +124087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 23, y: 4}
+  pointValue: 100
 --- !u!58 &1882011806
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -123887,6 +124204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 15, y: 24}
+  pointValue: 100
 --- !u!58 &1882200806
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -124003,6 +124321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 22, y: 15}
+  pointValue: 100
 --- !u!58 &1882212163
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -124381,6 +124700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 1, y: 9}
+  pointValue: 100
 --- !u!58 &1891943780
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -125571,6 +125891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 0}
+  pointValue: 100
 --- !u!58 &1912208032
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -126211,6 +126532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 5}
+  pointValue: 100
 --- !u!58 &1918910348
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -126793,6 +127115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 6}
+  pointValue: 100
 --- !u!58 &1930060406
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -127244,6 +127567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 24, y: 28}
+  pointValue: 100
 --- !u!58 &1933911037
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -127884,6 +128208,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 4}
+  pointValue: 100
 --- !u!58 &1945360596
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -128000,6 +128325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 19, y: 6}
+  pointValue: 100
 --- !u!58 &1947506937
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -128247,6 +128573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 18, y: 6}
+  pointValue: 100
 --- !u!58 &1949744724
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -128363,6 +128690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 24, y: 0}
+  pointValue: 100
 --- !u!58 &1949977512
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -128610,6 +128938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 18, y: 0}
+  pointValue: 100
 --- !u!58 &1951944050
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -129119,6 +129448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 1}
+  pointValue: 100
 --- !u!58 &1959007278
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -130676,6 +131006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 20}
+  pointValue: 100
 --- !u!58 &1992475322
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -131258,6 +131589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 10}
+  pointValue: 100
 --- !u!58 &2000703584
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -131767,6 +132099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 15, y: 18}
+  pointValue: 100
 --- !u!58 &2012061453
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -131883,6 +132216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 16, y: 28}
+  pointValue: 100
 --- !u!58 &2012086718
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -132476,6 +132810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 16}
+  pointValue: 100
 --- !u!58 &2025291599
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -132985,6 +133320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 16, y: 6}
+  pointValue: 100
 --- !u!58 &2029192929
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -133363,6 +133699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 15}
+  pointValue: 100
 --- !u!58 &2032414941
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -133741,6 +134078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 5, y: 17}
+  pointValue: 100
 --- !u!58 &2044259882
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134643,6 +134981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 8, y: 21}
+  pointValue: 100
 --- !u!58 &2061742809
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136282,6 +136621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 14, y: 27}
+  pointValue: 100
 --- !u!58 &2082191082
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136398,6 +136738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 7, y: 24}
+  pointValue: 100
 --- !u!58 &2085461879
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -137038,6 +137379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 23, y: 9}
+  pointValue: 100
 --- !u!58 &2089526312
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -137882,6 +138224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 25, y: 24}
+  pointValue: 100
 --- !u!58 &2097678072
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -138129,6 +138472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 6, y: 24}
+  pointValue: 100
 --- !u!58 &2100094339
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -138376,6 +138720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 2, y: 9}
+  pointValue: 100
 --- !u!58 &2100912184
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -138623,6 +138968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 6, y: 0}
+  pointValue: 100
 --- !u!58 &2105664392
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -139787,6 +140133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 20, y: 25}
+  pointValue: 100
 --- !u!58 &2120531035
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -140165,6 +140512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 12, y: 24}
+  pointValue: 100
 --- !u!58 &2122077749
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -141141,6 +141489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 21, y: 21}
+  pointValue: 100
 --- !u!58 &2131444660
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -141650,6 +141999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelGrid: {fileID: 456932970}
   gridPosition: {x: 11, y: 26}
+  pointValue: 100
 --- !u!58 &2139101885
 CircleCollider2D:
   m_ObjectHideFlags: 0

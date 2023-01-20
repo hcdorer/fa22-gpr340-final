@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1192361585314945180}
   - component: {fileID: 1192361585314945181}
   - component: {fileID: 1083629874498044434}
+  - component: {fileID: 3248879625916132408}
   - component: {fileID: 1192361585314945182}
   m_Layer: 0
   m_Name: PowerDot
@@ -102,6 +103,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.32
+--- !u!114 &3248879625916132408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192361585314945183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb83cfb26a278a45a3c3106d4a650b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelGrid: {fileID: 0}
+  gridPosition: {x: 0, y: 0}
+  pointValue: 500
 --- !u!114 &1192361585314945182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,5 +130,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ab842209d2d504f9ac4b08c2e4d453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelGrid: {fileID: 0}
-  gridPosition: {x: 0, y: 0}
