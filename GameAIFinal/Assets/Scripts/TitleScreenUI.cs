@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TitleScreenUI : MonoBehaviour {
-    [SerializeField] string sceneName;
+    [SerializeField] string gameSceneName;
     
     public void playButton() {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(gameSceneName);
     }
 
     public void exitButton() {
