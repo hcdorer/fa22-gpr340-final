@@ -16,19 +16,6 @@ public class PacManInput : MonoBehaviour {
         setDirection();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.gameObject.tag == "Ghost") {
-            if(stats.IFrames) {
-                return;
-            }
-
-            GhostBrain ghost = collision.GetComponent<GhostBrain>();
-            if(!ghost.respawn(stats)) {
-                movement.respawn();
-            }
-        }
-    }
-
     private void setDirection() {
         if(Input.GetKeyDown(KeyCode.W)) {
             movement.Direction = Vector2Int.up;
