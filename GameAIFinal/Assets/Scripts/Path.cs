@@ -13,7 +13,7 @@ public class PathNotValidException : Exception {
 
 public class Path {
     private List<SquareNode> pathList;
-    public List<SquareNode> PathList { get => getPathList(); }
+    private List<SquareNode> PathList { get => getPathList(); }
     public int length { get => PathList.Count; }
     public bool isValid { get => pathList != null; }
     public Square last { get => PathList[length - 1].Square; }
