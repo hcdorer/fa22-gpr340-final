@@ -11,7 +11,7 @@ public class CrossroadsReachedEventArgs {
     }
 }
 
-public class Crossroads : GridAligned {
+public class Crossroads : MonoBehaviour {
     public Square square { get => Square.getSquareAt(transform.position); }
 
     public delegate void CrossroadsReachedEventHandler(CrossroadsReachedEventArgs e);

@@ -44,7 +44,7 @@ public class AIPathfind : MonoBehaviour {
     private void setDirection() {
         if(pathIndex <= path.length - 2) {
             Square nextSquare = path[pathIndex + 1];
-            Vector2Int delta = nextSquare.GridPosition - movement.square.GridPosition;
+            Vector2Int delta = nextSquare.GridAligned.GridPosition - movement.square.GridAligned.GridPosition;
             movement.Direction = delta;
         }
     }

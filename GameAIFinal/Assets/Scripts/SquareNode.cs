@@ -48,7 +48,7 @@ public class SquareNode {
     }
 
     public static int getNewGCost(SquareNode first, SquareNode second) {
-        if(first.square.GridPosition.x != second.square.GridPosition.x && first.square.GridPosition.y != second.square.GridPosition.y) { // diagonal move
+        if(first.square.GridAligned.GridPosition.x != second.square.GridAligned.GridPosition.x && first.square.GridAligned.GridPosition.y != second.square.GridAligned.GridPosition.y) { // diagonal move
             return first.gCost + 14;
         } else { // horizontal or vertical move
             return first.gCost + 10;

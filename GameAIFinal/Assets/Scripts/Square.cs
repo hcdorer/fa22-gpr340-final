@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Square : GridAligned {
+public class Square : MonoBehaviour {
     [SerializeField] SquareSprites sprites;
 
     [SerializeField] bool northWall = true, eastWall = true, southWall = true, westWall = true;
@@ -12,15 +12,22 @@ public class Square : GridAligned {
     public bool SouthWall { get => southWall; }
     public bool WestWall { get => westWall; }
     public bool walledOff { get => (northWall && eastWall && southWall && westWall); }
-    public Square northNeighbor { get => getSquareAt(LevelGrid.CellToWorld(new Vector3Int(GridPosition.x, GridPosition.y + 1, 0))); }
-    public Square eastNeighbor { get => getSquareAt(LevelGrid.CellToWorld(new Vector3Int(GridPosition.x + 1, GridPosition.y, 0))); }
-    public Square southNeighbor { get => getSquareAt(LevelGrid.CellToWorld(new Vector3Int(GridPosition.x, GridPosition.y - 1, 0))); }
-    public Square westNeighbor { get => getSquareAt(LevelGrid.CellToWorld(new Vector3Int(GridPosition.x - 1, GridPosition.y, 0))); }
+    public Square northNeighbor { get => getSquareAt(gridAligned.LevelGrid.CellToWorld(new Vector3Int(gridAligned.GridPosition.x, gridAligned.GridPosition.y + 1, 0))); }
+    public Square eastNeighbor { get => getSquareAt(gridAligned.LevelGrid.CellToWorld(new Vector3Int(gridAligned.GridPosition.x + 1, gridAligned.GridPosition.y, 0))); }
+    public Square southNeighbor { get => getSquareAt(gridAligned.LevelGrid.CellToWorld(new Vector3Int(gridAligned.GridPosition.x, gridAligned.GridPosition.y - 1, 0))); }
+    public Square westNeighbor { get => getSquareAt(gridAligned.LevelGrid.CellToWorld(new Vector3Int(gridAligned.GridPosition.x - 1, gridAligned.GridPosition.y, 0))); }
+
+    private GridAligned gridAligned;
+    public GridAligned GridAligned { get => gridAligned; }
 
     private void OnValidate() {
         setSprite();
         setNeighborWalls();
-        snapToGrid();
+    }
+
+    private void Awake()
+    {
+        gridAligned = GetComponent<GridAligned>();
     }
 
     public override bool Equals(object otherObj) {
@@ -28,7 +35,7 @@ public class Square : GridAligned {
             return false;
         } else { // we know it's actually a Square
             Square other = (Square)otherObj;
-            return GridPosition == other.GridPosition && northWall == other.northWall && eastWall == other.eastWall && southWall == other.southWall && westWall == other.westWall;
+            return gridAligned.GridPosition == other.gridAligned.GridPosition && northWall == other.northWall && eastWall == other.eastWall && southWall == other.southWall && westWall == other.westWall;
         }
     }
 
@@ -99,6 +106,6 @@ public class Square : GridAligned {
     }
 
     public static float gridDistanceTo(Square first, Square second) {
-        return Mathf.Sqrt(Mathf.Pow(second.GridPosition.x - first.GridPosition.x, 2.0f) + Mathf.Pow(second.GridPosition.y - first.GridPosition.y, 2.0f));
+        return Mathf.Sqrt(Mathf.Pow(second.gridAligned.GridPosition.x - first.gridAligned.GridPosition.x, 2.0f) + Mathf.Pow(second.gridAligned.GridPosition.y - first.gridAligned.GridPosition.y, 2.0f));
     }
 }

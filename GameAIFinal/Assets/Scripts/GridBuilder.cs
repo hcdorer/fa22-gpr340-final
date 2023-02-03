@@ -34,8 +34,8 @@ public class GridBuilder : MonoBehaviour {
             for(int j = startPosition.x; j < startPosition.x + columns; j++) {
                 Square square = Instantiate(squarePrefab, gridHolder.transform).GetComponent<Square>();
                 square.name = "Square_" + j + "_" + i;
-                square.LevelGrid = levelGrid;
-                square.GridPosition = new Vector2Int(j, i);
+                square.GridAligned.LevelGrid = levelGrid;
+                square.GridAligned.GridPosition = new Vector2Int(j, i);
             }
         }
     }

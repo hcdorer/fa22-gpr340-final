@@ -32,18 +32,19 @@ public class DotPlacer : MonoBehaviour {
         foreach(Square square in FindObjectsOfType<Square>()) {
             if(!square.NorthWall || !square.EastWall || !square.SouthWall || !square.WestWall) {
                 Dot dot;
-                Vector2Int newPos = new Vector2Int(square.GridPosition.x, square.GridPosition.y);
+                Vector2Int newPos = new Vector2Int(square.GridAligned.GridPosition.x, square.GridAligned.GridPosition.y);
 
                 if(powerDotGridPositions.Contains(newPos)) {
                     dot = Instantiate(powerDotPrefab, dotHolder.transform).GetComponent<Dot>();
-                    dot.name = "PowerDot_" + square.GridPosition.x + "_" + square.GridPosition.y;
+                    dot.name = "PowerDot_" + square.GridAligned.GridPosition.x + "_" +square.GridAligned.GridPosition.y;
                 } else {
                     dot = Instantiate(dotPrefab, dotHolder.transform).GetComponent<Dot>();
-                    dot.name = "Dot_" + square.GridPosition.x + "_" + square.GridPosition.y;
+                    dot.name = "Dot_" + square.GridAligned.GridPosition.x + "_" + square.GridAligned.GridPosition.y;
                 }
 
-                dot.LevelGrid = GetComponent<Grid>();
-                dot.GridPosition = new Vector2Int(square.GridPosition.x, square.GridPosition.y);
+                GridAligned dotGridAligned = dot.GetComponent<GridAligned>();
+                dotGridAligned.LevelGrid = GetComponent<Grid>();
+                dotGridAligned.GridPosition = new Vector2Int(square.GridAligned.GridPosition.x, square.GridAligned.GridPosition.y);
             }
         }
     }

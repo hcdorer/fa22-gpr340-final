@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CharacterMovement : GridAligned {
+public class CharacterMovement : MonoBehaviour {
     private enum LerpResult {
         SUCCESS,
         FAIL,
@@ -20,14 +20,22 @@ public class CharacterMovement : GridAligned {
 
     public Square square { get => Square.getSquareAt(transform.position); }
 
+    private GridAligned gridAligned;
+    public GridAligned GridAligned { get => gridAligned; }
+
     public UnityEvent onTargetReached;
     [System.Serializable] public class TargetUpdatedEvent : UnityEvent<Vector3> { }
     public TargetUpdatedEvent onTargetUpdated;
     public UnityEvent onNextUnreachable;
 
+    private void Awake()
+    {
+        gridAligned = GetComponent<GridAligned>();
+    }
+
     private void Start() {
-        spawnPoint = GridPosition;
-        targetGridPosition = GridPosition + direction;
+        spawnPoint = gridAligned.GridPosition;
+        targetGridPosition = gridAligned.GridPosition + direction;
         setNextTarget();
     }
 
@@ -37,7 +45,7 @@ public class CharacterMovement : GridAligned {
         switch(result) {
             case LerpResult.SUCCESS:
                 onTargetReached.Invoke();
-                GridPosition = targetGridPosition;
+                gridAligned.GridPosition = targetGridPosition;
                 direction = nextDirection;
                 setNextTarget();
                 break;
@@ -49,8 +57,8 @@ public class CharacterMovement : GridAligned {
     }
 
     private void setNextTarget() {
-        Vector2Int nextTarget = GridPosition + direction;
-        Square nextSquare = Square.getSquareAt(LevelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0)));
+        Vector2Int nextTarget = gridAligned.GridPosition + direction;
+        Square nextSquare = Square.getSquareAt(gridAligned.LevelGrid.CellToWorld(new Vector3Int(nextTarget.x, nextTarget.y, 0)));
         if(nextSquare == null) {
             return;
         }
@@ -65,7 +73,7 @@ public class CharacterMovement : GridAligned {
     }
 
     private LerpResult lerp() {
-        Vector3 targetPosition = LevelGrid.CellToWorld(new Vector3Int(targetGridPosition.x, targetGridPosition.y, 0));
+        Vector3 targetPosition = gridAligned.LevelGrid.CellToWorld(new Vector3Int(targetGridPosition.x, targetGridPosition.y, 0));
 
         if(!canMoveIntoSquare(Square.getSquareAt(targetPosition))) {
             return LerpResult.FAIL;
@@ -126,7 +134,7 @@ public class CharacterMovement : GridAligned {
             return false;
         }
 
-        Vector2Int delta = next.GridPosition - current.GridPosition;
+        Vector2Int delta = next.GridAligned.GridPosition - current.GridAligned.GridPosition;
 
         if(delta == Vector2Int.up) {
             return !next.SouthWall;
@@ -156,13 +164,13 @@ public class CharacterMovement : GridAligned {
 
         int roll = Random.Range(0, possibleMoves.Count - 1);
         Square newTarget = possibleMoves[roll];
-        Vector2Int delta = newTarget.GridPosition - square.GridPosition;
+        Vector2Int delta = newTarget.GridAligned.GridPosition - square.GridAligned.GridPosition;
         direction = delta;
     }
 
     public void teleport(Vector2Int gridPosition) {
-        GridPosition = gridPosition;
-        targetGridPosition = GridPosition + direction;
+        gridAligned.GridPosition = gridPosition;
+        targetGridPosition = gridAligned.GridPosition + direction;
         setNextTarget();
     }
 

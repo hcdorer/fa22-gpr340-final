@@ -160,8 +160,8 @@ public abstract class GhostBrain : MonoBehaviour {
             }
 
             nextDirection = movement.Direction;
-            nextPosition = square.GridPosition + nextDirection;
-            next = Square.getSquareAt(movement.LevelGrid.CellToWorld(new Vector3Int(nextPosition.x, nextPosition.y, 0)));
+            nextPosition = square.GridAligned.GridPosition + nextDirection;
+            next = Square.getSquareAt(movement.GridAligned.LevelGrid.CellToWorld(new Vector3Int(nextPosition.x, nextPosition.y, 0)));
             validDirection = CharacterMovement.canMoveIntoSquare(next, nextDirection);
         }
 
@@ -169,8 +169,8 @@ public abstract class GhostBrain : MonoBehaviour {
             int roll = UnityEngine.Random.Range(0, directions.Count - 1);
 
             nextDirection = directions[roll];
-            nextPosition = square.GridPosition + nextDirection;
-            next = Square.getSquareAt(movement.LevelGrid.CellToWorld(new Vector3Int(nextPosition.x, nextPosition.y, 0)));
+            nextPosition = square.GridAligned.GridPosition + nextDirection;
+            next = Square.getSquareAt(movement.GridAligned.LevelGrid.CellToWorld(new Vector3Int(nextPosition.x, nextPosition.y, 0)));
             validDirection = CharacterMovement.canMoveIntoSquare(next, nextDirection);
             directions.Remove(directions[roll]);
         }

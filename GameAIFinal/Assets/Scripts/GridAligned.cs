@@ -30,6 +30,7 @@ public class GridAligned : MonoBehaviour {
         setOtherGridPositions();
     }
 
+    [ContextMenu("Set Other Grid Positions")]
     private void setOtherGridPositions() {
         foreach(var g in GetComponents<GridAligned>().Where(g => g != this)) {
             g.gridPosition = gridPosition;

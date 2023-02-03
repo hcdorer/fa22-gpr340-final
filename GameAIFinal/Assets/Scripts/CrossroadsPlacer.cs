@@ -35,9 +35,11 @@ public class CrossroadsPlacer : MonoBehaviour {
             }
 
             Crossroads crossroads = Instantiate(crossroadsPrefab, crossroadsHolder.transform).GetComponent<Crossroads>();
-            crossroads.name = "Crossroads_" + square.GridPosition.x + "_" + square.GridPosition.y;
-            crossroads.LevelGrid = levelGrid;
-            crossroads.GridPosition = square.GridPosition;
+            crossroads.name = "Crossroads_" + square.GridAligned.GridPosition.x + "_" + square.GridAligned.GridPosition.y;
+            
+            GridAligned crossroadsGridAligned = crossroads.GetComponent<GridAligned>();
+            crossroadsGridAligned.LevelGrid = levelGrid;
+            crossroadsGridAligned.GridPosition = square.GridAligned.GridPosition;
         }
     }
 }

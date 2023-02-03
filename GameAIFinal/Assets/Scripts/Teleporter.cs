@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teleporter : GridAligned {
+public class Teleporter : MonoBehaviour {
     [SerializeField] GridAligned exit;
 
     private void OnTriggerEnter2D(Collider2D collision) {
