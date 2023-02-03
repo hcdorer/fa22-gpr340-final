@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,11 +14,17 @@ public class PacManStats : MonoBehaviour {
     public bool IFrames { get => iFrames; }
     private float iFrameTimer;
 
+    private CharacterMovement movement;
+
     [System.Serializable] public class ScoreUpdateEvent : UnityEvent<int> { }
     public ScoreUpdateEvent onScoreUpdate;
 
     [System.Serializable] public class LivesUpdateEvent : UnityEvent<int> { }
     public LivesUpdateEvent onLivesUpdate;
+
+    private void Awake() {
+        movement = GetComponent<CharacterMovement>();
+    }
 
     private void Update() {
         if(iFrames) {
@@ -46,6 +53,8 @@ public class PacManStats : MonoBehaviour {
 
                 iFrames = true;
                 iFrameTimer = I_FRAME_LENGTH;
+
+                movement.respawn();
             }
         }
     }

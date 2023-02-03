@@ -1428,19 +1428,7 @@ MonoBehaviour:
         m_CallState: 2
   onTargetUpdated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 37666261}
-        m_TargetAssemblyTypeName: GhostPathDebug, Assembly-CSharp
-        m_MethodName: updateTargetPoint
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!212 &37666257
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1552,19 +1540,7 @@ MonoBehaviour:
         m_CallState: 2
   onTargetUpdated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 37666261}
-        m_TargetAssemblyTypeName: GhostPathDebug, Assembly-CSharp
-        m_MethodName: updateNextPoint
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onNextUnreachable:
     m_PersistentCalls:
       m_Calls:
@@ -22333,7 +22309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &369390173
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -44550,7 +44526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &689705364
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -50340,19 +50316,7 @@ MonoBehaviour:
         m_CallState: 2
   onTargetUpdated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 781696757}
-        m_TargetAssemblyTypeName: GhostPathDebug, Assembly-CSharp
-        m_MethodName: updateTargetPoint
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &781696754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50397,19 +50361,7 @@ MonoBehaviour:
         m_CallState: 2
   onTargetUpdated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 781696757}
-        m_TargetAssemblyTypeName: GhostPathDebug, Assembly-CSharp
-        m_MethodName: updateNextPoint
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onNextUnreachable:
     m_PersistentCalls:
       m_Calls:
@@ -62019,7 +61971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &951471973
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -77569,19 +77521,7 @@ MonoBehaviour:
         m_CallState: 2
   onTargetUpdated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1218743971}
-        m_TargetAssemblyTypeName: GhostPathDebug, Assembly-CSharp
-        m_MethodName: updateTargetPoint
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1218743967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77626,19 +77566,7 @@ MonoBehaviour:
         m_CallState: 2
   onTargetUpdated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1218743971}
-        m_TargetAssemblyTypeName: GhostPathDebug, Assembly-CSharp
-        m_MethodName: updateNextPoint
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onNextUnreachable:
     m_PersistentCalls:
       m_Calls:
@@ -81445,7 +81373,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1270079406
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -116369,7 +116297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1777766072
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -117714,19 +117642,7 @@ MonoBehaviour:
         m_CallState: 2
   onTargetUpdated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1798686389}
-        m_TargetAssemblyTypeName: GhostPathDebug, Assembly-CSharp
-        m_MethodName: updateTargetPoint
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1798686385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117771,19 +117687,7 @@ MonoBehaviour:
         m_CallState: 2
   onTargetUpdated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1798686389}
-        m_TargetAssemblyTypeName: GhostPathDebug, Assembly-CSharp
-        m_MethodName: updateNextPoint
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   onNextUnreachable:
     m_PersistentCalls:
       m_Calls:
@@ -121078,7 +120982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1846899942
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -125178,7 +125082,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1896951035
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -132694,7 +132598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2021898878
 SpriteRenderer:
   m_ObjectHideFlags: 0
